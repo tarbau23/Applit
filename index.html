@@ -1,0 +1,2545 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applit - Get Hired 15x Faster in Germany</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 25%, #f8fafc 50%, #ffffff 75%, #f1f5f9 100%);
+            min-height: 100vh;
+            color: #0f172a;
+            line-height: 1.6;
+            font-weight: 400;
+            padding-bottom: 100px;
+        }
+
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .nav {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .logo {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .auth-section {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .benefit-item {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .step-header {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .footer-content {
+            flex-direction: row-reverse;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 8px 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e293b;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '🇩🇪';
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            font-size: 10px;
+            z-index: 3;
+        }
+
+        .logo-icon::after {
+            content: '📄→💼';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            z-index: 2;
+        }
+
+       .logo-text {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+    
+    /* WebKit for Chrome, Safari, Edge */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Standard property (future-proof, no effect today in Firefox) */
+    background-clip: text;
+    
+    /* Fallback solid color (in case gradient text fails) */
+    color: #3b82f6;
+}
+
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-right: 16px;
+        }
+
+        [dir="rtl"] .language-selector {
+            margin-right: 0;
+            margin-left: 16px;
+        }
+
+        .language-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+
+        .language-button:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: #3b82f6;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            min-width: 180px;
+            display: none;
+            margin-top: 4px;
+        }
+
+        [dir="rtl"] .language-dropdown {
+            right: auto;
+            left: 0;
+        }
+
+        .language-dropdown.active {
+            display: block;
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-size: 14px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .language-option:last-child {
+            border-bottom: none;
+        }
+
+        .language-option:hover {
+            background: #f8fafc;
+        }
+
+        .language-option.selected {
+            background: #eff6ff;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 20px;
+            padding: 6px;
+            gap: 4px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-weight: 600;
+        }
+
+        .auth-section {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-signup {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            border-radius: 16px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-signup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0 80px;
+            background: transparent;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .hero-left {
+            max-width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+            color: #059669;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0f172a, #1e293b, #374151);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #475569;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Updated Upload Section - More Prominent */
+        .upload-section-primary {
+            margin-top: 32px;
+            margin-bottom: 40px;
+        }
+
+        .upload-area-primary {
+            border: 3px dashed #3b82f6;
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-area-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .upload-area-primary:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+
+        .upload-area-primary:hover::before {
+            opacity: 1;
+        }
+        
+        .upload-area-primary:active {
+            transform: translateY(0) scale(0.99);
+        }
+
+        .upload-icon-primary {
+            font-size: 56px;
+            margin-bottom: 16px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .upload-text-primary {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .upload-subtext-primary {
+            color: #64748b;
+            font-size: 16px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .upload-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .secondary-options {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            margin-top: 32px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 42%;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        [dir="rtl"] .divider::before {
+            left: auto;
+            right: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        [dir="rtl"] .divider::after {
+            right: auto;
+            left: 0;
+        }
+
+        .search-section {
+            margin-bottom: 20px;
+        }
+
+        .search-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+            resize: vertical;
+            min-height: 80px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .cta-button-secondary {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #64748b, #475569);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(100, 116, 139, 0.3);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-button-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(100, 116, 139, 0.4);
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+
+        .free-trial {
+            text-align: center;
+            margin-top: 24px;
+            color: #059669;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Updated Right Side - 15x Faster Emphasis */
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .hero-title-right {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 0;
+            background: linear-gradient(135deg, #0f172a, #1e293b, #374151);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1.5px;
+            text-align: center;
+        }
+
+        .speed-highlight {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speed-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .speed-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .speed-text {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .speed-description {
+            font-size: 15px;
+            opacity: 0.95;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+            margin-top: 12px;
+        }
+        
+        .speed-description strong {
+            font-weight: 700;
+            color: white;
+        }
+
+        .benefits-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .benefit-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .benefit-content p {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            font-size: 42px;
+            font-weight: 900;
+            color: #1e293b;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 32px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .step-description {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), 0 0 0 4px rgba(59, 130, 246, 0.1); }
+            50% { box-shadow: 0 8px 35px rgba(59, 130, 246, 0.6), 0 0 0 8px rgba(59, 130, 246, 0.1); }
+            100% { box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), 0 0 0 4px rgba(59, 130, 246, 0.1); }
+        }
+        
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99999;
+        }
+        
+        [dir="rtl"] .chat-widget {
+            right: auto;
+            left: 20px;
+        }
+        
+        .chat-button {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 60px;
+            padding: 16px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), 0 0 0 4px rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: slideInUp 0.6s ease-out 1s backwards, pulse 3s ease-in-out 2s infinite;
+        }
+        
+        .chat-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.5), 0 0 0 6px rgba(59, 130, 246, 0.15);
+            animation: none;
+        }
+        
+        .chat-button:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        .chat-close:focus {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+        
+        .chat-send:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        .chat-button.active {
+            display: none;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .chat-icon {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .chat-button:hover .chat-icon {
+            transform: rotate(15deg);
+            animation: none;
+        }
+        
+        /* Chat Box */
+        .chat-box {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 380px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        [dir="rtl"] .chat-box {
+            right: auto;
+            left: 0;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        [dir="rtl"] .chat-box.active {
+            animation: slideInLeft 0.3s ease-out;
+        }
+        
+        .chat-box.active {
+            display: flex;
+            animation: slideInRight 0.3s ease-out;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        
+        .chat-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .chat-body {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+            background: #f8fafc;
+            max-height: calc(100% - 140px);
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e0 #f1f5f9;
+        }
+        
+        .chat-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chat-body::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        .chat-body::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 3px;
+        }
+        
+        .chat-body::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        .chat-welcome {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .chat-welcome-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .chat-welcome-text {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 100px;
+        }
+        
+        [dir="rtl"] .message.user {
+            align-self: flex-start;
+        }
+        
+        [dir="rtl"] .message.bot {
+            align-self: flex-end;
+        }
+        
+        [dir="rtl"] .chat-input-form {
+            flex-direction: row-reverse;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 14px;
+            line-height: 1.5;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+        }
+        
+        .message.bot {
+            align-self: flex-start;
+            background: white;
+            color: #374151;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .chat-input-wrapper {
+            padding: 16px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .chat-input-form {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 14px;
+            resize: none;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            min-height: 44px;
+            max-height: 120px;
+        }
+        
+        .chat-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+        
+        .chat-send {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .chat-send:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .chat-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Feedback Button - Remove old styles */
+        .feedback-button {
+            display: none;
+        }
+
+        /* Social Share Section */
+        .social-share-section {
+            margin: 40px 0;
+        }
+        
+        .social-share {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-share::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .social-share > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .share-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .share-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .social-share:hover .share-title::after {
+            width: 100%;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .share-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .share-button span:first-child {
+            transition: transform 0.3s ease;
+        }
+        
+        .share-button:hover span:first-child {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .share-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+
+        [dir="rtl"] .share-button {
+            flex-direction: row-reverse;
+        }
+
+        .share-button.twitter {
+            border-color: #1DA1F2;
+            color: #1DA1F2;
+        }
+
+        .share-button.twitter:hover {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-button.linkedin {
+            border-color: #0077B5;
+            color: #0077B5;
+        }
+
+        .share-button.linkedin:hover {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-button.facebook {
+            border-color: #4267B2;
+            color: #4267B2;
+        }
+
+        .share-button.facebook:hover {
+            background: #4267B2;
+            color: white;
+        }
+
+        .share-button.whatsapp {
+            border-color: #25D366;
+            color: #25D366;
+        }
+
+        .share-button.whatsapp:hover {
+            background: #25D366;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(226, 232, 240, 0.6);
+            padding: 40px 0 24px;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .footer-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-logo-icon::before {
+            content: '🇩🇪';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 8px;
+            z-index: 3;
+        }
+
+        .footer-logo-icon::after {
+            content: '📄→💼';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        .footer-logo-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #3b82f6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(226, 232, 240, 0.6);
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 1440px) {
+            .chat-widget {
+                bottom: 30px;
+                right: 30px;
+            }
+            
+            [dir="rtl"] .chat-widget {
+                right: auto;
+                left: 30px;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-title-right {
+                font-size: 32px;
+            }
+            
+            .speed-number {
+                font-size: 42px;
+            }
+            
+            .share-buttons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                display: grid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+            
+            .social-share {
+                padding: 24px 16px;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                width: 100%;
+                display: flex;
+            }
+            
+            .share-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-title-right {
+                font-size: 36px;
+            }
+
+            .speed-number {
+                font-size: 36px;
+            }
+
+            .speed-text {
+                font-size: 16px;
+            }
+            
+            .speed-description {
+                font-size: 14px;
+            }
+            
+            .chat-widget {
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            [dir="rtl"] .chat-widget {
+                right: auto;
+                left: 10px;
+            }
+            
+            .chat-button {
+                padding: 14px 20px;
+                font-size: 14px;
+            }
+            
+            .chat-box {
+                width: calc(100vw - 20px);
+                height: calc(100vh - 100px);
+                max-width: 380px;
+                bottom: 0;
+                right: -10px;
+            }
+            
+            [dir="rtl"] .chat-box {
+                right: auto;
+                left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">Applit</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#how-it-works" class="nav-link active" data-translate="nav_how_it_works">How it works</a>
+                    <a href="#pricing" class="nav-link" data-translate="nav_pricing">Pricing</a>
+                    <a href="#success" class="nav-link" data-translate="nav_success">Success Stories</a>
+                    <a href="#support" class="nav-link" data-translate="nav_support">Support</a>
+                </div>
+                <div class="auth-section">
+                    <div class="language-selector">
+                        <div class="language-button" onclick="toggleLanguageDropdown()">
+                            <span id="current-flag">🇺🇸</span>
+                            <span id="current-lang">English</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown">
+                            <div class="language-option selected" onclick="selectLanguage('en', '🇺🇸', 'English')">
+                                <span>🇺🇸</span>
+                                <span>English</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('de', '🇩🇪', 'Deutsch')">
+                                <span>🇩🇪</span>
+                                <span>Deutsch</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('pt', '🇧🇷', 'Português')">
+                                <span>🇧🇷</span>
+                                <span>Português</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('ar', '🇸🇦', 'العربية')">
+                                <span>🇸🇦</span>
+                                <span>العربية</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('ru', '🇷🇺', 'Русский')">
+                                <span>🇷🇺</span>
+                                <span>Русский</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('es', '🇪🇸', 'Español')">
+                                <span>🇪🇸</span>
+                                <span>Español</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-signup" data-translate="nav_start_trial">Start Free Trial</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-left">
+                    <div class="hero-badge" data-translate="hero_badge">
+                        🇩🇪 Curated jobs from Bundesagentur für Arbeit • No fake jobs, no bullsh*t
+                    </div>
+                    
+                    <!-- Primary Upload Section - Moved Up -->
+                    <div class="upload-section-primary">
+                        <div class="upload-area-primary" onclick="uploadCV()">
+                            <div class="upload-icon-primary">📄</div>
+                            <div class="upload-text-primary" data-translate="upload_text_primary">Upload Your CV Now</div>
+                            <div class="upload-subtext-primary" data-translate="upload_subtext_primary">
+                                Drop your CV here or click to upload<br>
+                                Any language, any format • We'll handle the rest
+                            </div>
+                            <div class="upload-badge">
+                                <span>⚡</span>
+                                <span data-translate="upload_instant">Instant Analysis & Job Matching</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Secondary Options -->
+                    <div class="secondary-options">
+                        <div class="divider" data-translate="divider_or">OR</div>
+                        
+                        <div class="search-section">
+                            <div class="search-title" data-translate="search_title">🔍 Describe Your Dream Job</div>
+                            <textarea class="search-input" data-translate-placeholder="search_placeholder" placeholder="I am looking for a job as mechanical engineer in Berlin
+
+Write in your native language — we handle everything"></textarea>
+                        </div>
+                        
+                        <button class="cta-button-secondary" onclick="startJobSearch()" data-translate="cta_button_secondary">
+                            Search Jobs Without CV
+                        </button>
+                    </div>
+                    
+                    <div class="free-trial" data-translate="free_trial">
+                        ✨ 7-Day FREE Trial • No Credit Card Required
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <!-- Title and Subtitle moved here -->
+                    <h1 class="hero-title-right" data-translate="hero_title">Get Hired in Germany</h1>
+                    
+                    <!-- 15x Faster Highlight -->
+                    <div class="speed-highlight">
+                        <div class="speed-number">15x</div>
+                        <div class="speed-text" data-translate="speed_text">FASTER</div>
+                        <div class="speed-description" data-translate="hero_subtitle_right">
+                            Write your CV and cover letter in <strong>any language</strong> — we translate, format to German standards, and match you with verified jobs. Experience job hunting like never before.
+                        </div>
+                    </div>
+                    
+                    <div class="benefits-title" data-translate="benefits_title_new">Apply in Minutes, Not Hours</div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-content">
+                            <h3 data-translate="benefit_1_title">Perfect German CV Formatting</h3>
+                            <p data-translate="benefit_1_desc">We format your CV to German professional standards — no more rejections due to formatting.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌍</div>
+                        <div class="benefit-content">
+                            <h3 data-translate="benefit_2_title">Write in Any Language</h3>
+                            <p data-translate="benefit_2_desc">Create your CV in your native language. We translate and adjust to German standards.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✍️</div>
+                        <div class="benefit-content">
+                            <h3 data-translate="benefit_3_title">AI Cover Letters</h3>
+                            <p data-translate="benefit_3_desc">Personalized cover letters for each job, created from your CV and job description.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-content">
+                            <h3 data-translate="benefit_4_title">Verified Jobs Only</h3>
+                            <p data-translate="benefit_4_desc">Real opportunities from Bundesagentur für Arbeit. No spam, no fake postings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-translate="how_it_works_title">How It Works</h2>
+            <p class="section-subtitle" data-translate="how_it_works_subtitle">
+                From CV upload to job application in minutes. Our AI handles German formatting, translation, and matching so you can focus on landing your dream job.
+            </p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">📄</div>
+                        <div class="step-number">1</div>
+                    </div>
+                    <h3 class="step-title" data-translate="step_1_title">Upload & Describe</h3>
+                    <p class="step-description" data-translate="step_1_desc">Upload your CV or describe your target job in any language. We understand 50+ languages perfectly.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">🤖</div>
+                        <div class="step-number">2</div>
+                    </div>
+                    <h3 class="step-title" data-translate="step_2_title">AI Magic</h3>
+                    <p class="step-description" data-translate="step_2_desc">Our AI translates, formats your CV to German standards, and creates personalized cover letters for each job.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">🎯</div>
+                        <div class="step-number">3</div>
+                    </div>
+                    <h3 class="step-title" data-translate="step_3_title">Perfect Matches</h3>
+                    <p class="step-description" data-translate="step_3_desc">Get matched with verified jobs from Bundesagentur für Arbeit that perfectly fit your skills and preferences.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">🚀</div>
+                        <div class="step-number">4</div>
+                    </div>
+                    <h3 class="step-title" data-translate="step_4_title">Apply & Get Hired</h3>
+                    <p class="step-description" data-translate="step_4_desc">Submit professionally formatted German applications with one click. Track responses and get hired 15x faster.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Share Section -->
+    <section class="social-share-section">
+        <div class="container">
+            <div class="social-share">
+                <h3 class="share-title" data-translate="share_title">Help Others Find Their Dream Job in Germany</h3>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?text=I%20found%20an%20amazing%20tool%20to%20get%20hired%2015x%20faster%20in%20Germany!%20Check%20out%20Applit%20-%20it%20translates%20your%20CV%20to%20German%20standards%20and%20matches%20you%20with%20verified%20jobs.&url=https://applit.de" 
+                       class="share-button twitter" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <span>🐦</span>
+                        <span data-translate="share_twitter">Share on Twitter</span>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://applit.de" 
+                       class="share-button linkedin" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <span>💼</span>
+                        <span data-translate="share_linkedin">Share on LinkedIn</span>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://applit.de" 
+                       class="share-button facebook" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <span>📘</span>
+                        <span data-translate="share_facebook">Share on Facebook</span>
+                    </a>
+                    <a href="https://wa.me/?text=I%20found%20an%20amazing%20tool%20to%20get%20hired%2015x%20faster%20in%20Germany!%20Check%20out%20Applit%20-%20it%20translates%20your%20CV%20to%20German%20standards%20and%20matches%20you%20with%20verified%20jobs.%20https://applit.de" 
+                       class="share-button whatsapp" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <span>💬</span>
+                        <span data-translate="share_whatsapp">Share on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon"></div>
+                    <span class="footer-logo-text">Applit</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" data-translate="footer_privacy">Privacy Policy</a>
+                    <a href="#" class="footer-link" data-translate="footer_terms">Terms of Service</a>
+                    <a href="#" class="footer-link" data-translate="footer_contact">Contact Support</a>
+                    <a href="#" class="footer-link" data-translate="footer_help">Help Center</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate="footer_copyright">© 2025 Applit — All rights reserved. Helping international professionals get hired 15x faster in Germany.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-button" onclick="toggleChat()" id="chat-button">
+            <span class="chat-icon">💭</span>
+            <span data-translate="chat_button">Have a Question?</span>
+        </button>
+        
+        <div class="chat-box" id="chat-box">
+            <div class="chat-header">
+                <h3 class="chat-title" data-translate="chat_title">How Can We Help?</h3>
+                <button class="chat-close" onclick="toggleChat()">×</button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-welcome">
+                    <div class="chat-welcome-title" data-translate="chat_welcome_title">Welcome to Applit Support!</div>
+                    <div class="chat-welcome-text" data-translate="chat_welcome_text">
+                        Questions about our service, new feature requests, or complaints - write everything here. We would like to know how we can help you further.
+                    </div>
+                </div>
+                <div class="chat-messages" id="chat-messages"></div>
+            </div>
+            <div class="chat-input-wrapper">
+                <form class="chat-input-form" onsubmit="sendMessage(event)">
+                    <textarea 
+                        class="chat-input" 
+                        id="chat-input"
+                        data-translate-placeholder="chat_input_placeholder"
+                        placeholder="Type your message..."
+                        rows="1"
+                        onkeydown="handleChatKeydown(event)"
+                        oninput="autoResizeTextarea(this)"
+                    ></textarea>
+                    <button type="submit" class="chat-send" data-translate="chat_send">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Translation system
+        const translations = {
+            en: {
+                // Navigation
+                nav_how_it_works: "How it works",
+                nav_pricing: "Pricing",
+                nav_success: "Success Stories",
+                nav_support: "Support",
+                nav_start_trial: "Start Free Trial",
+                
+                // Hero Section
+                hero_badge: "🇩🇪 Curated jobs from Bundesagentur für Arbeit • No fake jobs, no bullsh*t",
+                hero_title: "Get Hired in Germany",
+                
+                // Primary Upload Section
+                upload_text_primary: "Upload Your CV Now",
+                upload_subtext_primary: "Drop your CV here or click to upload<br>Any language, any format • We'll handle the rest",
+                upload_instant: "Instant Analysis & Job Matching",
+                
+                // Search Section
+                divider_or: "OR",
+                search_title: "🔍 Describe Your Dream Job",
+                search_placeholder: "I am looking for a job as mechanical engineer in Berlin\n\nWrite in your native language — we handle everything",
+                
+                // Secondary CTA
+                cta_button_secondary: "Search Jobs Without CV",
+                free_trial: "✨ 7-Day FREE Trial • No Credit Card Required",
+                
+                // Speed Highlight
+                speed_text: "FASTER",
+                
+                // Benefits
+                benefits_title: "Why Choose Applit?",
+                benefits_title_new: "Apply in Minutes, Not Hours",
+                benefit_1_title: "Perfect German CV Formatting",
+                benefit_1_desc: "We format your CV to German professional standards — no more rejections due to formatting.",
+                benefit_2_title: "Write in Any Language",
+                benefit_2_desc: "Create your CV in your native language. We translate and adjust to German standards.",
+                benefit_3_title: "AI Cover Letters",
+                benefit_3_desc: "Personalized cover letters for each job, created from your CV and job description.",
+                benefit_4_title: "Verified Jobs Only",
+                benefit_4_desc: "Real opportunities from Bundesagentur für Arbeit. No spam, no fake postings.",
+                
+                // Speed Highlight with moved subtitle
+                hero_subtitle_right: "Write your CV and cover letter in <strong>any language</strong> — we translate, format to German standards, and match you with verified jobs. Experience job hunting like never before.",
+                
+                // How It Works
+                how_it_works_title: "How It Works",
+                how_it_works_subtitle: "From CV upload to job application in minutes. Our AI handles German formatting, translation, and matching so you can focus on landing your dream job.",
+                step_1_title: "Upload & Describe",
+                step_1_desc: "Upload your CV or describe your target job in any language. We understand 50+ languages perfectly.",
+                step_2_title: "AI Magic",
+                step_2_desc: "Our AI translates, formats your CV to German standards, and creates personalized cover letters for each job.",
+                step_3_title: "Perfect Matches",
+                step_3_desc: "Get matched with verified jobs from Bundesagentur für Arbeit that perfectly fit your skills and preferences.",
+                step_4_title: "Apply & Get Hired",
+                step_4_desc: "Submit professionally formatted German applications with one click. Track responses and get hired 15x faster.",
+                
+                // Footer
+                footer_privacy: "Privacy Policy",
+                footer_terms: "Terms of Service",
+                footer_contact: "Contact Support",
+                footer_help: "Help Center",
+                footer_copyright: "© 2025 Applit — All rights reserved. Helping international professionals get hired 15x faster in Germany.",
+                
+                // Upload success
+                upload_success_icon: "✅",
+                upload_success_text: "Perfect! CV uploaded successfully.",
+                upload_success_subtext: "Analyzing your qualifications and finding matching jobs...",
+                
+                // Chat Widget
+                chat_button: "Have a Question?",
+                chat_title: "How Can We Help?",
+                chat_welcome_title: "Welcome to Applit Support!",
+                chat_welcome_text: "Questions about our service, new feature requests, or complaints - write everything here. We would like to know how we can help you further.",
+                chat_input_placeholder: "Type your message... (Press Enter to send)",
+                chat_send: "Send",
+                chat_success_message: "Thank you for your message! We'll get back to you within 24 hours.",
+                
+                // Social
+                share_title: "Help Others Find Their Dream Job in Germany",
+                share_twitter: "Share on Twitter",
+                share_linkedin: "Share on LinkedIn",
+                share_facebook: "Share on Facebook",
+                share_whatsapp: "Share on WhatsApp"
+            },
+            de: {
+                // Navigation
+                nav_how_it_works: "So funktioniert's",
+                nav_pricing: "Preise",
+                nav_success: "Erfolgsgeschichten",
+                nav_support: "Support",
+                nav_start_trial: "Kostenlose Testversion",
+                
+                // Hero Section
+                hero_badge: "🇩🇪 Kuratierte Jobs von der Bundesagentur für Arbeit • Keine Fake-Jobs, kein Bullsh*t",
+                hero_title: "Job in Deutschland finden",
+                
+                // Primary Upload Section
+                upload_text_primary: "Jetzt Lebenslauf hochladen",
+                upload_subtext_primary: "Lebenslauf hier ablegen oder zum Hochladen klicken<br>Jede Sprache, jedes Format • Wir kümmern uns um den Rest",
+                upload_instant: "Sofortige Analyse & Job-Matching",
+                
+                // Search Section
+                divider_or: "ODER",
+                search_title: "🔍 Beschreiben Sie Ihren Traumjob",
+                search_placeholder: "Ich suche einen Job als Maschinenbauingenieur in Berlin\n\nSchreiben Sie in Ihrer Muttersprache — wir kümmern uns um alles",
+                
+                // Secondary CTA
+                cta_button_secondary: "Jobs ohne Lebenslauf suchen",
+                free_trial: "✨ 7 Tage KOSTENLOS testen • Keine Kreditkarte erforderlich",
+                
+                // Speed Highlight
+                speed_text: "SCHNELLER",
+                
+                // Benefits
+                benefits_title: "Warum Applit?",
+                benefits_title_new: "Bewerben in Minuten, nicht Stunden",
+                benefit_1_title: "Perfekte deutsche CV-Formatierung",
+                benefit_1_desc: "Wir formatieren Ihren Lebenslauf nach deutschen Berufsstandards — keine Absagen mehr wegen Formatierung.",
+                benefit_2_title: "In jeder Sprache schreiben",
+                benefit_2_desc: "Erstellen Sie Ihren Lebenslauf in Ihrer Muttersprache. Wir übersetzen und passen an deutsche Standards an.",
+                benefit_3_title: "KI-Anschreiben",
+                benefit_3_desc: "Personalisierte Anschreiben für jeden Job, erstellt aus Ihrem Lebenslauf und der Stellenbeschreibung.",
+                benefit_4_title: "Nur verifizierte Jobs",
+                benefit_4_desc: "Echte Chancen von der Bundesagentur für Arbeit. Kein Spam, keine falschen Anzeigen.",
+                
+                // Speed Highlight with moved subtitle
+                hero_subtitle_right: "Schreiben Sie Ihren Lebenslauf und Ihr Anschreiben in <strong>jeder Sprache</strong> — wir übersetzen, formatieren nach deutschen Standards und matchen Sie mit verifizierten Jobs. Erleben Sie Jobsuche wie nie zuvor.",
+                
+                // How It Works
+                how_it_works_title: "So funktioniert's",
+                how_it_works_subtitle: "Vom CV-Upload zur Bewerbung in Minuten. Unsere KI übernimmt deutsche Formatierung, Übersetzung und Matching, damit Sie sich auf Ihren Traumjob konzentrieren können.",
+                step_1_title: "Hochladen & Beschreiben",
+                step_1_desc: "Laden Sie Ihren Lebenslauf hoch oder beschreiben Sie Ihren Ziel-Job in jeder Sprache. Wir verstehen 50+ Sprachen perfekt.",
+                step_2_title: "KI-Magie",
+                step_2_desc: "Unsere KI übersetzt, formatiert Ihren Lebenslauf nach deutschen Standards und erstellt personalisierte Anschreiben für jeden Job.",
+                step_3_title: "Perfekte Matches",
+                step_3_desc: "Erhalten Sie Matches mit verifizierten Jobs von der Bundesagentur für Arbeit, die perfekt zu Ihren Fähigkeiten und Präferenzen passen.",
+                step_4_title: "Bewerben & Job bekommen",
+                step_4_desc: "Reichen Sie professionell formatierte deutsche Bewerbungen mit einem Klick ein. Verfolgen Sie Antworten und werden Sie 15x schneller eingestellt.",
+                
+                // Footer
+                footer_privacy: "Datenschutz",
+                footer_terms: "Nutzungsbedingungen",
+                footer_contact: "Support kontaktieren",
+                footer_help: "Hilfe-Center",
+                footer_copyright: "© 2025 Applit — Alle Rechte vorbehalten. Wir helfen internationalen Fachkräften, 15x schneller in Deutschland eingestellt zu werden.",
+                
+                // Upload success
+                upload_success_icon: "✅",
+                upload_success_text: "Perfekt! Lebenslauf erfolgreich hochgeladen.",
+                upload_success_subtext: "Analysiere Ihre Qualifikationen und finde passende Jobs...",
+                
+                // Chat Widget
+                chat_button: "Haben Sie eine Frage?",
+                chat_title: "Wie können wir helfen?",
+                chat_welcome_title: "Willkommen beim Applit Support!",
+                chat_welcome_text: "Fragen zu unserem Service, neue Funktionswünsche oder Beschwerden - schreiben Sie alles hier. Wir möchten wissen, wie wir Ihnen weiter helfen können.",
+                chat_input_placeholder: "Ihre Nachricht eingeben... (Enter zum Senden)",
+                chat_send: "Senden",
+                chat_success_message: "Vielen Dank für Ihre Nachricht! Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+                
+                // Social
+                share_title: "Helfen Sie anderen, ihren Traumjob in Deutschland zu finden",
+                share_twitter: "Auf Twitter teilen",
+                share_linkedin: "Auf LinkedIn teilen",
+                share_facebook: "Auf Facebook teilen",
+                share_whatsapp: "Auf WhatsApp teilen"
+            },
+            pt: {
+                // Navigation
+                nav_how_it_works: "Como funciona",
+                nav_pricing: "Preços",
+                nav_success: "Histórias de Sucesso",
+                nav_support: "Suporte",
+                nav_start_trial: "Iniciar Teste Grátis",
+                
+                // Hero Section
+                hero_badge: "🇩🇪 Vagas curadas da Bundesagentur für Arbeit • Sem vagas falsas, sem besteira",
+                hero_title: "Consiga Emprego na Alemanha",
+                
+                // Primary Upload Section
+                upload_text_primary: "Envie Seu CV Agora",
+                upload_subtext_primary: "Solte seu CV aqui ou clique para enviar<br>Qualquer idioma, qualquer formato • Nós cuidamos do resto",
+                upload_instant: "Análise Instantânea & Correspondência de Vagas",
+                
+                // Search Section
+                divider_or: "OU",
+                search_title: "🔍 Descreva Seu Emprego dos Sonhos",
+                search_placeholder: "Estou procurando um emprego como engenheiro mecânico em Berlim\n\nEscreva em seu idioma nativo — nós cuidamos de tudo",
+                
+                // Secondary CTA
+                cta_button_secondary: "Buscar Vagas Sem CV",
+                free_trial: "✨ 7 Dias de Teste GRÁTIS • Sem Cartão de Crédito",
+                
+                // Speed Highlight
+                speed_text: "MAIS RÁPIDO",
+                speed_description: "Seja contratado 15 vezes mais rápido que métodos tradicionais com nosso sistema alemão de aplicação com IA",
+                
+                // Benefits
+                benefits_title: "Por Que Escolher Applit?",
+                benefits_title_new: "Candidate-se em Minutos, Não Horas",
+                benefit_1_title: "Formatação Perfeita de CV Alemão",
+                benefit_1_desc: "Formatamos seu CV aos padrões profissionais alemães — chega de rejeições por formatação.",
+                benefit_2_title: "Escreva em Qualquer Idioma",
+                benefit_2_desc: "Crie seu CV em seu idioma nativo. Nós traduzimos e ajustamos aos padrões alemães.",
+                benefit_3_title: "Cartas de Apresentação com IA",
+                benefit_3_desc: "Cartas de apresentação personalizadas para cada vaga, criadas do seu CV e descrição da vaga.",
+                benefit_4_title: "Apenas Vagas Verificadas",
+                benefit_4_desc: "Oportunidades reais da Bundesagentur für Arbeit. Sem spam, sem anúncios falsos.",
+                
+                // Speed Highlight with moved subtitle
+                hero_subtitle_right: "Escreva seu CV e carta de apresentação em <strong>qualquer idioma</strong> — nós traduzimos, formatamos aos padrões alemães e combinamos você com vagas verificadas. Experimente a busca de emprego como nunca antes.",
+                
+                // How It Works
+                how_it_works_title: "Como Funciona",
+                how_it_works_subtitle: "Do envio do CV à candidatura em minutos. Nossa IA cuida da formatação alemã, tradução e correspondência para que você possa focar em conseguir seu emprego dos sonhos.",
+                step_1_title: "Enviar & Descrever",
+                step_1_desc: "Envie seu CV ou descreva sua vaga-alvo em qualquer idioma. Entendemos mais de 50 idiomas perfeitamente.",
+                step_2_title: "Mágica da IA",
+                step_2_desc: "Nossa IA traduz, formata seu CV aos padrões alemães e cria cartas de apresentação personalizadas para cada vaga.",
+                step_3_title: "Correspondências Perfeitas",
+                step_3_desc: "Seja combinado com vagas verificadas da Bundesagentur für Arbeit que se encaixam perfeitamente em suas habilidades e preferências.",
+                step_4_title: "Candidatar & Ser Contratado",
+                step_4_desc: "Envie aplicações alemãs formatadas profissionalmente com um clique. Acompanhe respostas e seja contratado 15x mais rápido.",
+                
+                // Footer
+                footer_privacy: "Política de Privacidade",
+                footer_terms: "Termos de Serviço",
+                footer_contact: "Contatar Suporte",
+                footer_help: "Central de Ajuda",
+                footer_copyright: "© 2025 Applit — Todos os direitos reservados. Ajudando profissionais internacionais a serem contratados 15x mais rápido na Alemanha.",
+                
+                // Upload success
+                upload_success_icon: "✅",
+                upload_success_text: "Perfeito! CV enviado com sucesso.",
+                upload_success_subtext: "Analisando suas qualificações e encontrando vagas correspondentes...",
+                
+                // Chat Widget
+                chat_button: "Tem uma pergunta?",
+                chat_title: "Como podemos ajudar?",
+                chat_welcome_title: "Bem-vindo ao Suporte Applit!",
+                chat_welcome_text: "Perguntas sobre nosso serviço, solicitações de novos recursos ou reclamações - escreva tudo aqui. Gostaríamos de saber como podemos ajudá-lo ainda mais.",
+                chat_input_placeholder: "Digite sua mensagem... (Enter para enviar)",
+                chat_send: "Enviar",
+                chat_success_message: "Obrigado pela sua mensagem! Responderemos em até 24 horas.",
+                
+                // Social
+                share_title: "Ajude outros a encontrar o emprego dos sonhos na Alemanha",
+                share_twitter: "Compartilhar no Twitter",
+                share_linkedin: "Compartilhar no LinkedIn",
+                share_facebook: "Compartilhar no Facebook",
+                share_whatsapp: "Compartilhar no WhatsApp"
+            },
+            ar: {
+                // Navigation
+                nav_how_it_works: "كيف يعمل",
+                nav_pricing: "الأسعار",
+                nav_success: "قصص النجاح",
+                nav_support: "الدعم",
+                nav_start_trial: "ابدأ النسخة التجريبية",
+                
+                // Hero Section
+                hero_badge: "🇩🇪 وظائف منتقاة من Bundesagentur für Arbeit • لا وظائف مزيفة، لا هراء",
+                hero_title: "احصل على وظيفة في ألمانيا",
+                
+                // Primary Upload Section
+                upload_text_primary: "ارفع سيرتك الذاتية الآن",
+                upload_subtext_primary: "اسحب سيرتك الذاتية هنا أو انقر للرفع<br>أي لغة، أي صيغة • نحن نتولى الباقي",
+                upload_instant: "تحليل فوري ومطابقة الوظائف",
+                
+                // Search Section
+                divider_or: "أو",
+                search_title: "🔍 صف وظيفة أحلامك",
+                search_placeholder: "أبحث عن وظيفة كمهندس ميكانيكي في برلين\n\nاكتب بلغتك الأم — نحن نتولى كل شيء",
+                
+                // Secondary CTA
+                cta_button_secondary: "البحث عن وظائف بدون سيرة ذاتية",
+                free_trial: "✨ تجربة مجانية لمدة 7 أيام • بدون بطاقة ائتمان",
+                
+                // Speed Highlight
+                speed_text: "أسرع",
+                speed_description: "احصل على وظيفة أسرع بـ 15 مرة من الطرق التقليدية مع نظام التقديم الألماني المدعوم بالذكاء الاصطناعي",
+                
+                // Benefits
+                benefits_title: "لماذا تختار Applit؟",
+                benefits_title_new: "تقدّم في دقائق، وليس ساعات",
+                benefit_1_title: "تنسيق السيرة الذاتية الألمانية المثالي",
+                benefit_1_desc: "ننسق سيرتك الذاتية وفقاً للمعايير المهنية الألمانية — لا مزيد من الرفض بسبب التنسيق.",
+                benefit_2_title: "اكتب بأي لغة",
+                benefit_2_desc: "أنشئ سيرتك الذاتية بلغتك الأم. نحن نترجم ونعدّل وفقاً للمعايير الألمانية.",
+                benefit_3_title: "خطابات تقديم بالذكاء الاصطناعي",
+                benefit_3_desc: "خطابات تقديم مخصصة لكل وظيفة، مُنشأة من سيرتك الذاتية ووصف الوظيفة.",
+                benefit_4_title: "وظائف مُتحقق منها فقط",
+                benefit_4_desc: "فرص حقيقية من Bundesagentur für Arbeit. لا بريد مزعج، لا إعلانات مزيفة.",
+                
+                // Speed Highlight with moved subtitle
+                hero_subtitle_right: "اكتب سيرتك الذاتية وخطاب التقديم <strong>بأي لغة</strong> — نحن نترجم ونُنسق وفقاً للمعايير الألمانية ونطابقك مع الوظائف المُتحقق منها. جرّب البحث عن وظيفة كما لم تجربه من قبل.",
+                
+                // How It Works
+                how_it_works_title: "كيف يعمل",
+                how_it_works_subtitle: "من رفع السيرة الذاتية إلى التقديم للوظيفة في دقائق. يتولى الذكاء الاصطناعي لدينا التنسيق الألماني والترجمة والمطابقة حتى تتمكن من التركيز على الحصول على وظيفة أحلامك.",
+                step_1_title: "ارفع وصف",
+                step_1_desc: "ارفع سيرتك الذاتية أو صف وظيفتك المستهدفة بأي لغة. نفهم أكثر من 50 لغة بشكل مثالي.",
+                step_2_title: "سحر الذكاء الاصطناعي",
+                step_2_desc: "يترجم ذكاءنا الاصطناعي وينسق سيرتك الذاتية وفقاً للمعايير الألمانية وينشئ خطابات تقديم مخصصة لكل وظيفة.",
+                step_3_title: "مطابقات مثالية",
+                step_3_desc: "احصل على مطابقة مع وظائف مُتحقق منها من Bundesagentur für Arbeit تناسب مهاراتك وتفضيلاتك بشكل مثالي.",
+                step_4_title: "تقدّم واحصل على الوظيفة",
+                step_4_desc: "قدّم طلبات ألمانية منسقة بشكل احترافي بنقرة واحدة. تتبع الردود واحصل على وظيفة أسرع بـ 15 مرة.",
+                
+                // Footer
+                footer_privacy: "سياسة الخصوصية",
+                footer_terms: "شروط الخدمة",
+                footer_contact: "اتصل بالدعم",
+                footer_help: "مركز المساعدة",
+                footer_copyright: "© 2025 Applit — جميع الحقوق محفوظة. نساعد المحترفين الدوليين على الحصول على وظيفة أسرع بـ 15 مرة في ألمانيا.",
+                
+                // Upload success
+                upload_success_icon: "✅",
+                upload_success_text: "ممتاز! تم رفع السيرة الذاتية بنجاح.",
+                upload_success_subtext: "جارٍ تحليل مؤهلاتك والعثور على وظائف مطابقة...",
+                
+                // Chat Widget
+                chat_button: "هل لديك سؤال؟",
+                chat_title: "كيف يمكننا المساعدة؟",
+                chat_welcome_title: "مرحباً بك في دعم Applit!",
+                chat_welcome_text: "أسئلة حول خدمتنا، طلبات ميزات جديدة، أو شكاوى - اكتب كل شيء هنا. نود أن نعرف كيف يمكننا مساعدتك أكثر.",
+                chat_input_placeholder: "اكتب رسالتك... (اضغط Enter للإرسال)",
+                chat_send: "إرسال",
+                chat_success_message: "شكراً لرسالتك! سنرد عليك خلال 24 ساعة.",
+                
+                // Social
+                share_title: "ساعد الآخرين في العثور على وظيفة أحلامهم في ألمانيا",
+                share_twitter: "مشاركة على تويتر",
+                share_linkedin: "مشاركة على لينكد إن",
+                share_facebook: "مشاركة على فيسبوك",
+                share_whatsapp: "مشاركة على واتساب"
+            },
+            ru: {
+                // Navigation
+                nav_how_it_works: "Как это работает",
+                nav_pricing: "Цены",
+                nav_success: "Истории успеха",
+                nav_support: "Поддержка",
+                nav_start_trial: "Начать бесплатно",
+                
+                // Hero Section
+                hero_badge: "🇩🇪 Отобранные вакансии от Bundesagentur für Arbeit • Никаких фейковых вакансий, никакой ерунды",
+                hero_title: "Найдите работу в Германии",
+                
+                // Primary Upload Section
+                upload_text_primary: "Загрузите резюме сейчас",
+                upload_subtext_primary: "Перетащите резюме сюда или нажмите для загрузки<br>Любой язык, любой формат • Мы позаботимся об остальном",
+                upload_instant: "Мгновенный анализ и подбор вакансий",
+                
+                // Search Section
+                divider_or: "ИЛИ",
+                search_title: "🔍 Опишите работу мечты",
+                search_placeholder: "Я ищу работу инженера-механика в Берлине\n\nПишите на родном языке — мы позаботимся обо всем",
+                
+                // Secondary CTA
+                cta_button_secondary: "Искать вакансии без резюме",
+                free_trial: "✨ 7 дней БЕСПЛАТНО • Кредитная карта не требуется",
+                
+                // Speed Highlight
+                speed_text: "БЫСТРЕЕ",
+                speed_description: "Найдите работу в 15 раз быстрее традиционных методов с нашей немецкой системой подачи заявок на основе ИИ",
+                
+                // Benefits
+                benefits_title: "Почему выбрать Applit?",
+                benefits_title_new: "Подайте заявку за минуты, а не часы",
+                benefit_1_title: "Идеальное немецкое форматирование резюме",
+                benefit_1_desc: "Мы форматируем ваше резюме по немецким профессиональным стандартам — больше никаких отказов из-за форматирования.",
+                benefit_2_title: "Пишите на любом языке",
+                benefit_2_desc: "Создавайте резюме на родном языке. Мы переведем и адаптируем к немецким стандартам.",
+                benefit_3_title: "Сопроводительные письма с ИИ",
+                benefit_3_desc: "Персонализированные сопроводительные письма для каждой вакансии, созданные на основе вашего резюме и описания вакансии.",
+                benefit_4_title: "Только проверенные вакансии",
+                benefit_4_desc: "Реальные возможности от Bundesagentur für Arbeit. Никакого спама, никаких фальшивых объявлений.",
+                
+                // Speed Highlight with moved subtitle
+                hero_subtitle_right: "Пишите резюме и сопроводительное письмо на <strong>любом языке</strong> — мы переведем, отформатируем по немецким стандартам и подберем проверенные вакансии. Испытайте поиск работы как никогда раньше.",
+                
+                // How It Works
+                how_it_works_title: "Как это работает",
+                how_it_works_subtitle: "От загрузки резюме до подачи заявки за минуты. Наш ИИ берет на себя немецкое форматирование, перевод и подбор, чтобы вы могли сосредоточиться на получении работы мечты.",
+                step_1_title: "Загрузить и описать",
+                step_1_desc: "Загрузите резюме или опишите желаемую работу на любом языке. Мы отлично понимаем более 50 языков.",
+                step_2_title: "Магия ИИ",
+                step_2_desc: "Наш ИИ переводит, форматирует ваше резюме по немецким стандартам и создает персонализированные сопроводительные письма для каждой вакансии.",
+                step_3_title: "Идеальные совпадения",
+                step_3_desc: "Получите подбор проверенных вакансий от Bundesagentur für Arbeit, которые идеально подходят вашим навыкам и предпочтениям.",
+                step_4_title: "Подать заявку и получить работу",
+                step_4_desc: "Отправляйте профессионально оформленные немецкие заявки одним кликом. Отслеживайте ответы и получайте работу в 15 раз быстрее.",
+                
+                // Footer
+                footer_privacy: "Политика конфиденциальности",
+                footer_terms: "Условия использования",
+                footer_contact: "Связаться с поддержкой",
+                footer_help: "Центр помощи",
+                footer_copyright: "© 2025 Applit — Все права защищены. Помогаем международным специалистам найти работу в 15 раз быстрее в Германии.",
+                
+                // Upload success
+                upload_success_icon: "✅",
+                upload_success_text: "Отлично! Резюме успешно загружено.",
+                upload_success_subtext: "Анализируем ваши квалификации и ищем подходящие вакансии...",
+                
+                // Chat Widget
+                chat_button: "Есть вопрос?",
+                chat_title: "Как мы можем помочь?",
+                chat_welcome_title: "Добро пожаловать в поддержку Applit!",
+                chat_welcome_text: "Вопросы о нашем сервисе, запросы новых функций или жалобы - пишите все здесь. Мы хотели бы знать, как можем помочь вам дальше.",
+                chat_input_placeholder: "Введите ваше сообщение... (Enter для отправки)",
+                chat_send: "Отправить",
+                chat_success_message: "Спасибо за ваше сообщение! Мы ответим в течение 24 часов.",
+                
+                // Social
+                share_title: "Помогите другим найти работу мечты в Германии",
+                share_twitter: "Поделиться в Twitter",
+                share_linkedin: "Поделиться в LinkedIn",
+                share_facebook: "Поделиться в Facebook",
+                share_whatsapp: "Поделиться в WhatsApp"
+            },
+            es: {
+                // Navigation
+                nav_how_it_works: "Cómo funciona",
+                nav_pricing: "Precios",
+                nav_success: "Historias de éxito",
+                nav_support: "Soporte",
+                nav_start_trial: "Prueba gratuita",
+                
+                // Hero Section
+                hero_badge: "🇩🇪 Empleos seleccionados de Bundesagentur für Arbeit • Sin empleos falsos, sin tonterías",
+                hero_title: "Consigue trabajo en Alemania",
+                
+                // Primary Upload Section
+                upload_text_primary: "Sube tu CV ahora",
+                upload_subtext_primary: "Arrastra tu CV aquí o haz clic para subir<br>Cualquier idioma, cualquier formato • Nosotros nos encargamos del resto",
+                upload_instant: "Análisis instantáneo y emparejamiento de empleos",
+                
+                // Search Section
+                divider_or: "O",
+                search_title: "🔍 Describe tu trabajo soñado",
+                search_placeholder: "Busco trabajo como ingeniero mecánico en Berlín\n\nEscribe en tu idioma nativo — nosotros nos encargamos de todo",
+                
+                // Secondary CTA
+                cta_button_secondary: "Buscar empleos sin CV",
+                free_trial: "✨ Prueba GRATIS de 7 días • Sin tarjeta de crédito",
+                
+                // Speed Highlight
+                speed_text: "MÁS RÁPIDO",
+                speed_description: "Consigue trabajo 15 veces más rápido que con métodos tradicionales con nuestro sistema alemán de aplicación con IA",
+                
+                // Benefits
+                benefits_title: "¿Por qué elegir Applit?",
+                benefits_title_new: "Aplica en minutos, no en horas",
+                benefit_1_title: "Formato perfecto de CV alemán",
+                benefit_1_desc: "Formateamos tu CV según los estándares profesionales alemanes — no más rechazos por formato.",
+                benefit_2_title: "Escribe en cualquier idioma",
+                benefit_2_desc: "Crea tu CV en tu idioma nativo. Traducimos y ajustamos a los estándares alemanes.",
+                benefit_3_title: "Cartas de presentación con IA",
+                benefit_3_desc: "Cartas de presentación personalizadas para cada trabajo, creadas a partir de tu CV y descripción del trabajo.",
+                benefit_4_title: "Solo empleos verificados",
+                benefit_4_desc: "Oportunidades reales de Bundesagentur für Arbeit. Sin spam, sin anuncios falsos.",
+                
+                // Speed Highlight with moved subtitle
+                hero_subtitle_right: "Escribe tu CV y carta de presentación en <strong>cualquier idioma</strong> — nosotros traducimos, formateamos según los estándares alemanes y te emparejamos con empleos verificados. Experimenta la búsqueda de empleo como nunca antes.",
+                
+                // How It Works
+                how_it_works_title: "Cómo funciona",
+                how_it_works_subtitle: "Desde subir el CV hasta la solicitud de empleo en minutos. Nuestra IA maneja el formato alemán, la traducción y el emparejamiento para que puedas concentrarte en conseguir tu trabajo soñado.",
+                step_1_title: "Subir y describir",
+                step_1_desc: "Sube tu CV o describe tu trabajo objetivo en cualquier idioma. Entendemos más de 50 idiomas perfectamente.",
+                step_2_title: "Magia de IA",
+                step_2_desc: "Nuestra IA traduce, formatea tu CV según los estándares alemanes y crea cartas de presentación personalizadas para cada trabajo.",
+                step_3_title: "Coincidencias perfectas",
+                step_3_desc: "Obtén coincidencias con trabajos verificados de Bundesagentur für Arbeit que se ajustan perfectamente a tus habilidades y preferencias.",
+                step_4_title: "Aplicar y ser contratado",
+                step_4_desc: "Envía aplicaciones alemanas formateadas profesionalmente con un clic. Rastrea respuestas y consigue trabajo 15 veces más rápido.",
+                
+                // Footer
+                footer_privacy: "Política de privacidad",
+                footer_terms: "Términos de servicio",
+                footer_contact: "Contactar soporte",
+                footer_help: "Centro de ayuda",
+                footer_copyright: "© 2025 Applit — Todos los derechos reservados. Ayudando a profesionales internacionales a ser contratados 15 veces más rápido en Alemania.",
+                
+                // Upload success
+                upload_success_icon: "✅",
+                upload_success_text: "¡Perfecto! CV subido con éxito.",
+                upload_success_subtext: "Analizando tus calificaciones y encontrando trabajos coincidentes...",
+                
+                // Chat Widget
+                chat_button: "¿Tienes una pregunta?",
+                chat_title: "¿Cómo podemos ayudar?",
+                chat_welcome_title: "¡Bienvenido al soporte de Applit!",
+                chat_welcome_text: "Preguntas sobre nuestro servicio, solicitudes de nuevas funciones o quejas: escribe todo aquí. Nos gustaría saber cómo podemos ayudarte más.",
+                chat_input_placeholder: "Escribe tu mensaje... (Enter para enviar)",
+                chat_send: "Enviar",
+                chat_success_message: "¡Gracias por tu mensaje! Te responderemos en 24 horas.",
+                
+                // Social
+                share_title: "Ayuda a otros a encontrar su trabajo soñado en Alemania",
+                share_twitter: "Compartir en Twitter",
+                share_linkedin: "Compartir en LinkedIn",
+                share_facebook: "Compartir en Facebook",
+                share_whatsapp: "Compartir en WhatsApp"
+            }
+        };
+
+        // Get the saved language from localStorage or default to English
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+        // Initialize the page with the saved language
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            const savedFlag = localStorage.getItem('selectedFlag') || '🇺🇸';
+            const savedLangName = localStorage.getItem('selectedLangName') || 'English';
+            
+            selectLanguage(savedLang, savedFlag, savedLangName, false);
+            updateShareLinks();
+        });
+        
+        // Close chat when clicking outside
+        document.addEventListener('click', function(event) {
+            const chatWidget = document.querySelector('.chat-widget');
+            const chatBox = document.getElementById('chat-box');
+            
+            if (chatBox && chatBox.classList.contains('active') && 
+                !chatWidget.contains(event.target)) {
+                toggleChat();
+            }
+        });
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.language-selector')) {
+                document.getElementById('language-dropdown').classList.remove('active');
+            }
+        });
+
+        // Update social share links with language-specific messages
+        function updateShareLinks() {
+            const shareMessages = {
+                en: 'I found an amazing tool to get hired 15x faster in Germany! Check out Applit - it translates your CV to German standards and matches you with verified jobs.',
+                de: 'Ich habe ein tolles Tool gefunden, um 15x schneller in Deutschland eingestellt zu werden! Schaut euch Applit an - es übersetzt euren Lebenslauf nach deutschen Standards und findet passende Jobs.',
+                pt: 'Encontrei uma ferramenta incrível para ser contratado 15x mais rápido na Alemanha! Confira o Applit - traduz seu CV para os padrões alemães e encontra vagas verificadas.',
+                ar: 'وجدت أداة رائعة للحصول على وظيفة أسرع بـ 15 مرة في ألمانيا! تحقق من Applit - يترجم سيرتك الذاتية للمعايير الألمانية ويطابقك مع وظائف محققة.',
+                ru: 'Я нашел потрясающий инструмент, чтобы устроиться на работу в Германии в 15 раз быстрее! Посмотрите Applit - он переводит ваше резюме по немецким стандартам и подбирает проверенные вакансии.',
+                es: '¡Encontré una herramienta increíble para ser contratado 15 veces más rápido en Alemania! Mira Applit - traduce tu CV a los estándares alemanes y te empareja con empleos verificados.'
+            };
+            
+            const message = shareMessages[currentLanguage] || shareMessages.en;
+            const url = 'https://applit.de';
+            
+            // Update Twitter link
+            const twitterLink = document.querySelector('.share-button.twitter');
+            if (twitterLink) {
+                twitterLink.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}&url=${encodeURIComponent(url)}`;
+            }
+            
+            // Update WhatsApp link
+            const whatsappLink = document.querySelector('.share-button.whatsapp');
+            if (whatsappLink) {
+                whatsappLink.href = `https://wa.me/?text=${encodeURIComponent(message + ' ' + url)}`;
+            }
+        }
+        
+        function selectLanguage(langCode, flag, langName, save = true) {
+            currentLanguage = langCode;
+            
+            // Update current language display
+            document.getElementById('current-flag').textContent = flag;
+            document.getElementById('current-lang').textContent = langName;
+            
+            // Update selected state in dropdown
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Find and select the correct option
+            document.querySelectorAll('.language-option').forEach(option => {
+                if (option.textContent.includes(flag)) {
+                    option.classList.add('selected');
+                }
+            });
+            
+            // Close dropdown
+            document.getElementById('language-dropdown').classList.remove('active');
+            
+            // Update page language
+            updatePageLanguage(langCode);
+            
+            // Update share links
+            updateShareLinks();
+            
+            // Set RTL for Arabic
+            if (langCode === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', langCode);
+            }
+            
+            // Save to localStorage
+            if (save) {
+                localStorage.setItem('selectedLanguage', langCode);
+                localStorage.setItem('selectedFlag', flag);
+                localStorage.setItem('selectedLangName', langName);
+            }
+        }
+
+        function updatePageLanguage(langCode) {
+            const trans = translations[langCode];
+            
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (trans[key]) {
+                    element.innerHTML = trans[key];
+                }
+            });
+            
+            // Update placeholders
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (trans[key]) {
+                    element.placeholder = trans[key];
+                }
+            });
+            
+            // Update page title
+            document.title = langCode === 'de' ? 'Applit - 15x Schneller zum Job in Deutschland' : 
+                            langCode === 'pt' ? 'Applit - Seja Contratado 15x Mais Rápido na Alemanha' :
+                            langCode === 'ar' ? 'Applit - احصل على وظيفة أسرع بـ 15 مرة في ألمانيا' :
+                            langCode === 'ru' ? 'Applit - Найдите работу в 15 раз быстрее в Германии' :
+                            langCode === 'es' ? 'Applit - Consigue trabajo 15x más rápido en Alemania' :
+                            'Applit - Get Hired 15x Faster in Germany';
+        }
+
+        // Chat Widget Functions
+        function toggleChat() {
+            const chatBox = document.getElementById('chat-box');
+            const chatButton = document.getElementById('chat-button');
+            
+            if (chatBox.classList.contains('active')) {
+                chatBox.classList.remove('active');
+                chatButton.classList.remove('active');
+            } else {
+                chatBox.classList.add('active');
+                chatButton.classList.add('active');
+                // Focus on input when opened
+                setTimeout(() => {
+                    document.getElementById('chat-input').focus();
+                }, 100);
+            }
+        }
+        
+        function sendMessage(event) {
+            event.preventDefault();
+            
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            const messagesContainer = document.getElementById('chat-messages');
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+            userMessage.textContent = message;
+            messagesContainer.appendChild(userMessage);
+            
+            // Clear input
+            input.value = '';
+            autoResizeTextarea(input);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Simulate bot response
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot';
+                const trans = translations[currentLanguage];
+                botMessage.textContent = trans.chat_success_message || translations.en.chat_success_message;
+                messagesContainer.appendChild(botMessage);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+        }
+        
+        function handleChatKeydown(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage(event);
+            }
+        }
+        
+        function autoResizeTextarea(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
+        }
+        
+        function uploadCV() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.pdf,.doc,.docx';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const uploadArea = document.querySelector('.upload-area-primary');
+                    const trans = translations[currentLanguage];
+                    uploadArea.innerHTML = `
+                        <div class="upload-icon-primary">${trans.upload_success_icon}</div>
+                        <div class="upload-text-primary">${file.name}</div>
+                        <div class="upload-subtext-primary">
+                            <strong>${trans.upload_success_text}</strong><br>
+                            ${trans.upload_success_subtext}
+                        </div>
+                    `;
+                    uploadArea.style.borderColor = '#10b981';
+                    uploadArea.style.background = 'linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(34, 197, 94, 0.05))';
+                }
+            };
+            input.click();
+        }
+
+        function startJobSearch() {
+            const button = event.target;
+            const originalText = button.innerHTML;
+            const processingTexts = {
+                en: '🔄 Processing Your Request...',
+                de: '🔄 Ihre Anfrage wird bearbeitet...',
+                pt: '🔄 Processando Sua Solicitação...',
+                ar: '🔄 جارٍ معالجة طلبك...',
+                ru: '🔄 Обработка вашего запроса...',
+                es: '🔄 Procesando tu solicitud...'
+            };
+            const redirectTexts = {
+                en: '✨ Redirecting to Your Job Matches...',
+                de: '✨ Weiterleitung zu Ihren Job-Übereinstimmungen...',
+                pt: '✨ Redirecionando para Suas Correspondências de Emprego...',
+                ar: '✨ إعادة التوجيه إلى وظائفك المطابقة...',
+                ru: '✨ Перенаправление к вашим подходящим вакансиям...',
+                es: '✨ Redirigiendo a tus coincidencias de trabajo...'
+            };
+            const demoTexts = {
+                en: '🎉 Demo: In the real app, you would now see perfectly matched German jobs with your optimized CV and cover letters ready to send!',
+                de: '🎉 Demo: In der echten App würden Sie jetzt perfekt passende deutsche Jobs mit Ihrem optimierten Lebenslauf und fertigen Anschreiben sehen!',
+                pt: '🎉 Demo: No aplicativo real, você agora veria empregos alemães perfeitamente correspondentes com seu CV otimizado e cartas de apresentação prontas para enviar!',
+                ar: '🎉 عرض توضيحي: في التطبيق الحقيقي، ستشاهد الآن وظائف ألمانية متطابقة تمامًا مع سيرتك الذاتية المحسّنة وخطابات التقديم الجاهزة للإرسال!',
+                ru: '🎉 Демо: В реальном приложении вы бы сейчас увидели идеально подходящие немецкие вакансии с вашим оптимизированным резюме и готовыми сопроводительными письмами!',
+                es: '🎉 Demo: En la aplicación real, ahora verías trabajos alemanes perfectamente coincidentes con tu CV optimizado y cartas de presentación listas para enviar!'
+            };
+            
+            button.innerHTML = processingTexts[currentLanguage];
+            button.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                button.innerHTML = redirectTexts[currentLanguage];
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.opacity = '1';
+                    alert(demoTexts[currentLanguage]);
+                }, 1500);
+            }, 2000);
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize step card animations
+        document.querySelectorAll('.step-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Initialize benefit card animations
+        document.querySelectorAll('.benefit-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(20px)';
+            item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
