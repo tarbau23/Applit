@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Applit | Get Hired 15x Faster in Germany</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 25%, #f8fafc 50%, #ffffff 75%, #f1f5f9 100%);
+            min-height: 100vh;
+            color: #0f172a;
+            line-height: 1.6;
+            font-weight: 400;
+            padding-bottom: 80px;
+        }
+
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .nav {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .logo {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .auth-section {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .footer-content {
+            flex-direction: row-reverse;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 8px 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e293b;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '🇩🇪';
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            font-size: 10px;
+            z-index: 3;
+        }
+
+        .logo-icon::after {
+            content: '📄→💼';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            z-index: 2;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-right: 16px;
+        }
+
+        [dir="rtl"] .language-selector {
+            margin-right: 0;
+            margin-left: 16px;
+        }
+
+        .language-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+
+        .language-button:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: #3b82f6;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            min-width: 180px;
+            display: none;
+            margin-top: 4px;
+        }
+
+        [dir="rtl"] .language-dropdown {
+            right: auto;
+            left: 0;
+        }
+
+        .language-dropdown.active {
+            display: block;
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-size: 14px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .language-option:last-child {
+            border-bottom: none;
+        }
+
+        .language-option:hover {
+            background: #f8fafc;
+        }
+
+        .language-option.selected {
+            background: #eff6ff;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 20px;
+            padding: 6px;
+            gap: 4px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-weight: 600;
+        }
+
+        .auth-section {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-signup {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            border-radius: 16px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-signup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Pricing Hero Section */
+        .pricing-hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .pricing-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #0f172a, #1e293b, #374151);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .pricing-subtitle {
+            font-size: 20px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* Currency Toggle */
+        .currency-toggle {
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 16px;
+            padding: 4px;
+            margin-bottom: 40px;
+        }
+
+        .currency-option {
+            padding: 8px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #64748b;
+        }
+
+        .currency-option.active {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+        }
+
+        /* CV Correction Banner */
+        .cv-correction-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 40px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-correction-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cv-banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cv-banner-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cv-banner-price {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cv-banner-price span {
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .cv-banner-description {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cv-banner-features {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .cv-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid #3b82f6;
+            transform: scale(1.05);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 6px 24px;
+            border-radius: 0 20px 0 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .plan-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .plan-description {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        .plan-price {
+            font-size: 48px;
+            font-weight: 900;
+            color: #0f172a;
+            margin-bottom: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .plan-price span {
+            font-size: 20px;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .plan-billing {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 32px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            color: #10b981;
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .plan-button {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .plan-button.primary {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .plan-button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .plan-button.secondary {
+            background: white;
+            color: #3b82f6;
+            border: 2px solid #e5e7eb;
+        }
+
+        .plan-button.secondary:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+        }
+
+        .faq-title {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 900;
+            color: #1e293b;
+            margin-bottom: 48px;
+            letter-spacing: -0.5px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            color: #1e293b;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 24px 24px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(226, 232, 240, 0.6);
+            padding: 32px 0 20px;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .footer-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-logo-icon::before {
+            content: '🇩🇪';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 8px;
+            z-index: 3;
+        }
+
+        .footer-logo-icon::after {
+            content: '📄→💼';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        .footer-logo-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #3b82f6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(226, 232, 240, 0.6);
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99999;
+        }
+        
+        [dir="rtl"] .chat-widget {
+            right: auto;
+            left: 20px;
+        }
+        
+        .chat-button {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 60px;
+            padding: 16px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), 0 0 0 4px rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: slideInUp 0.6s ease-out 1s backwards, pulse 3s ease-in-out 2s infinite;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), 0 0 0 4px rgba(59, 130, 246, 0.1); }
+            50% { box-shadow: 0 8px 35px rgba(59, 130, 246, 0.6), 0 0 0 8px rgba(59, 130, 246, 0.1); }
+            100% { box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), 0 0 0 4px rgba(59, 130, 246, 0.1); }
+        }
+        
+        .chat-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.5), 0 0 0 6px rgba(59, 130, 246, 0.15);
+            animation: none;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .chat-icon {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .chat-button:hover .chat-icon {
+            transform: rotate(15deg);
+            animation: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            
+            .cv-banner-features {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .pricing-title {
+                font-size: 36px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .chat-widget {
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            [dir="rtl"] .chat-widget {
+                right: auto;
+                left: 10px;
+            }
+            
+            .chat-button {
+                padding: 14px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">Applit</span>
+                </a>
+                <div class="nav-menu">
+                    <a href="/" class="nav-link" data-translate="nav_home">Home</a>
+                    <a href="#pricing" class="nav-link active" data-translate="nav_pricing">Pricing</a>
+                    <a href="#how-it-works" class="nav-link" data-translate="nav_how_it_works">How it works</a>
+                    <a href="#support" class="nav-link" data-translate="nav_support">Support</a>
+                </div>
+                <div class="auth-section">
+                    <div class="language-selector">
+                        <div class="language-button" onclick="toggleLanguageDropdown()">
+                            <span id="current-flag">🇺🇸</span>
+                            <span id="current-lang">English</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown">
+                            <div class="language-option selected" onclick="selectLanguage('en', '🇺🇸', 'English')">
+                                <span>🇺🇸</span>
+                                <span>English</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('de', '🇩🇪', 'Deutsch')">
+                                <span>🇩🇪</span>
+                                <span>Deutsch</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('pt', '🇧🇷', 'Português')">
+                                <span>🇧🇷</span>
+                                <span>Português</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('ar', '🇸🇦', 'العربية')">
+                                <span>🇸🇦</span>
+                                <span>العربية</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('ru', '🇷🇺', 'Русский')">
+                                <span>🇷🇺</span>
+                                <span>Русский</span>
+                            </div>
+                            <div class="language-option" onclick="selectLanguage('es', '🇪🇸', 'Español')">
+                                <span>🇪🇸</span>
+                                <span>Español</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-signup" data-translate="nav_start_trial">Start Free Trial</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pricing Hero -->
+    <section class="pricing-hero">
+        <div class="container">
+            <h1 class="pricing-title" data-translate="pricing_title">Simple, Transparent Pricing</h1>
+            <p class="pricing-subtitle" data-translate="pricing_subtitle">
+                Choose the perfect plan for your job search journey in Germany. Start with free job search and upgrade anytime.
+            </p>
+        </div>
+    </section>
+
+    <!-- CV Correction Banner -->
+    <section class="container">
+        <div class="cv-correction-banner">
+            <div class="cv-banner-content">
+                <h2 class="cv-banner-title" data-translate="cv_banner_title">🎯 Professional CV Correction</h2>
+                <div class="cv-banner-price">
+                    €29.99 <span data-translate="cv_banner_once">one-time payment</span>
+                </div>
+                <p class="cv-banner-description" data-translate="cv_banner_description">
+                    Get your CV professionally corrected to German standards. Pay once, use forever with unlimited updates and revisions.
+                </p>
+                <div class="cv-banner-features">
+                    <div class="cv-feature">
+                        <span>✅</span>
+                        <span data-translate="cv_feature_1">German format standards</span>
+                    </div>
+                    <div class="cv-feature">
+                        <span>✅</span>
+                        <span data-translate="cv_feature_2">Professional translation</span>
+                    </div>
+                    <div class="cv-feature">
+                        <span>✅</span>
+                        <span data-translate="cv_feature_3">Unlimited updates</span>
+                    </div>
+                    <div class="cv-feature">
+                        <span>✅</span>
+                        <span data-translate="cv_feature_4">ATS optimization</span>
+                    </div>
+                </div>
+                <button class="plan-button primary" style="width: auto; padding: 14px 32px; font-size: 16px;" data-translate="cv_button">
+                    Get Your CV Corrected Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Grid -->
+    <section class="container">
+        <div class="pricing-grid">
+            <!-- Basic Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name" data-translate="plan_basic_name">Pay As You Go</h3>
+                <p class="plan-description" data-translate="plan_basic_description">Perfect for occasional job applications</p>
+                <div class="plan-price">
+                    €3.99<span data-translate="plan_basic_per">/cover letter</span>
+                </div>
+                <p class="plan-billing" data-translate="plan_basic_billing">Pay only when you need it</p>
+                <ul class="plan-features">
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_basic_1">1 professional cover letter</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_basic_2">Free job search & matching</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_basic_3">AI-powered customization</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_basic_4">German format standards</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_basic_5">24-hour delivery</span>
+                    </li>
+                </ul>
+                <button class="plan-button secondary" data-translate="plan_button_basic">Get Started</button>
+            </div>
+
+            <!-- Standard Plan -->
+            <div class="pricing-card popular">
+                <div class="popular-badge" data-translate="popular_badge">MOST POPULAR</div>
+                <h3 class="plan-name" data-translate="plan_standard_name">Standard Pack</h3>
+                <p class="plan-description" data-translate="plan_standard_description">Best value for active job seekers</p>
+                <div class="plan-price">
+                    €19.99<span data-translate="plan_standard_per">/30 letters</span>
+                </div>
+                <p class="plan-billing" data-translate="plan_standard_billing">€0.67 per cover letter - Save 83%!</p>
+                <ul class="plan-features">
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_standard_1">30 professional cover letters</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_standard_2">Free job search & matching</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_standard_3">Priority processing</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_standard_4">Application tracking</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_standard_5">Email support</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_standard_6">Valid for 90 days</span>
+                    </li>
+                </ul>
+                <button class="plan-button primary" data-translate="plan_button_standard">Choose Standard</button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name" data-translate="plan_premium_name">Unlimited</h3>
+                <p class="plan-description" data-translate="plan_premium_description">For serious job hunters</p>
+                <div class="plan-price">
+                    €49.99<span data-translate="plan_premium_per">/month</span>
+                </div>
+                <p class="plan-billing" data-translate="plan_premium_billing">Unlimited cover letters</p>
+                <ul class="plan-features">
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_premium_1">Unlimited cover letters</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_premium_2">Free job search & matching</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_premium_3">Instant generation</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_premium_4">Advanced customization</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_premium_5">Priority support 24/7</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_premium_6">Interview preparation tips</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span data-translate="feature_premium_7">Cancel anytime</span>
+                    </li>
+                </ul>
+                <button class="plan-button secondary" data-translate="plan_button_premium">Go Unlimited</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title" data-translate="faq_title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-translate="faq_q1">Is job search really free?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a1">Yes! Job search and matching is 100% free forever. You only pay for cover letter generation and CV correction services.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-translate="faq_q2">How does CV correction work?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a2">Our CV correction is a one-time service. We professionally format your CV to German standards, correct language errors, and optimize it for ATS systems. Once corrected, you can update and use it unlimited times.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-translate="faq_q3">Can I switch plans?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a3">Absolutely! You can upgrade or downgrade your plan anytime. If you have remaining cover letters from a Standard pack, they'll remain valid when you switch.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-translate="faq_q4">What languages do you support?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a4">We support 50+ languages. You can write your CV and cover letters in any language, and we'll translate and format them to professional German standards.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-translate="faq_q5">Do unused cover letters expire?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_a5">For the Standard pack (30 letters), your credits are valid for 90 days. Unlimited monthly plans renew each month. Pay-as-you-go letters never expire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon"></div>
+                    <span class="footer-logo-text">Applit</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" data-translate="footer_privacy">Privacy Policy</a>
+                    <a href="#" class="footer-link" data-translate="footer_terms">Terms of Service</a>
+                    <a href="#" class="footer-link" data-translate="footer_contact">Contact Support</a>
+                    <a href="#" class="footer-link" data-translate="footer_help">Help Center</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate="footer_copyright">© 2025 Applit — All rights reserved. Helping international professionals get hired 15x faster in Germany.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-button" onclick="window.location.href='mailto:support@applit.de'">
+            <span class="chat-icon">💭</span>
+            <span data-translate="chat_button">Have a Question?</span>
+        </button>
+    </div>
+
+    <script>
+        // Translation system
+        const translations = {
+            en: {
+                // Navigation
+                nav_home: "Home",
+                nav_pricing: "Pricing",
+                nav_how_it_works: "How it works",
+                nav_support: "Support",
+                nav_start_trial: "Start Free Trial",
+                
+                // Pricing Hero
+                pricing_title: "Simple, Transparent Pricing",
+                pricing_subtitle: "Choose the perfect plan for your job search journey in Germany. Start with free job search and upgrade anytime.",
+                
+                // CV Correction Banner
+                cv_banner_title: "🎯 Professional CV Correction",
+                cv_banner_once: "one-time payment",
+                cv_banner_description: "Get your CV professionally corrected to German standards. Pay once, use forever with unlimited updates and revisions.",
+                cv_feature_1: "German format standards",
+                cv_feature_2: "Professional translation",
+                cv_feature_3: "Unlimited updates",
+                cv_feature_4: "ATS optimization",
+                cv_button: "Get Your CV Corrected Now",
+                
+                // Plans
+                plan_basic_name: "Pay As You Go",
+                plan_basic_description: "Perfect for occasional job applications",
+                plan_basic_per: "/cover letter",
+                plan_basic_billing: "Pay only when you need it",
+                feature_basic_1: "1 professional cover letter",
+                feature_basic_2: "Free job search & matching",
+                feature_basic_3: "AI-powered customization",
+                feature_basic_4: "German format standards",
+                feature_basic_5: "24-hour delivery",
+                plan_button_basic: "Get Started",
+                
+                plan_standard_name: "Standard Pack",
+                plan_standard_description: "Best value for active job seekers",
+                plan_standard_per: "/30 letters",
+                plan_standard_billing: "€0.67 per cover letter - Save 83%!",
+                popular_badge: "MOST POPULAR",
+                feature_standard_1: "30 professional cover letters",
+                feature_standard_2: "Free job search & matching",
+                feature_standard_3: "Priority processing",
+                feature_standard_4: "Application tracking",
+                feature_standard_5: "Email support",
+                feature_standard_6: "Valid for 90 days",
+                plan_button_standard: "Choose Standard",
+                
+                plan_premium_name: "Unlimited",
+                plan_premium_description: "For serious job hunters",
+                plan_premium_per: "/month",
+                plan_premium_billing: "Unlimited cover letters",
+                feature_premium_1: "Unlimited cover letters",
+                feature_premium_2: "Free job search & matching",
+                feature_premium_3: "Instant generation",
+                feature_premium_4: "Advanced customization",
+                feature_premium_5: "Priority support 24/7",
+                feature_premium_6: "Interview preparation tips",
+                feature_premium_7: "Cancel anytime",
+                plan_button_premium: "Go Unlimited",
+                
+                // FAQ
+                faq_title: "Frequently Asked Questions",
+                faq_q1: "Is job search really free?",
+                faq_a1: "Yes! Job search and matching is 100% free forever. You only pay for cover letter generation and CV correction services.",
+                faq_q2: "How does CV correction work?",
+                faq_a2: "Our CV correction is a one-time service. We professionally format your CV to German standards, correct language errors, and optimize it for ATS systems. Once corrected, you can update and use it unlimited times.",
+                faq_q3: "Can I switch plans?",
+                faq_a3: "Absolutely! You can upgrade or downgrade your plan anytime. If you have remaining cover letters from a Standard pack, they'll remain valid when you switch.",
+                faq_q4: "What languages do you support?",
+                faq_a4: "We support 50+ languages. You can write your CV and cover letters in any language, and we'll translate and format them to professional German standards.",
+                faq_q5: "Do unused cover letters expire?",
+                faq_a5: "For the Standard pack (30 letters), your credits are valid for 90 days. Unlimited monthly plans renew each month. Pay-as-you-go letters never expire.",
+                
+                // Chat
+                chat_button: "Have a Question?",
+                
+                // Footer
+                footer_privacy: "Privacy Policy",
+                footer_terms: "Terms of Service",
+                footer_contact: "Contact Support",
+                footer_help: "Help Center",
+                footer_copyright: "© 2025 Applit — All rights reserved. Helping international professionals get hired 15x faster in Germany."
+            },
+            de: {
+                // Navigation
+                nav_home: "Startseite",
+                nav_pricing: "Preise",
+                nav_how_it_works: "So funktioniert's",
+                nav_support: "Support",
+                nav_start_trial: "Kostenlose Testversion",
+                
+                // Pricing Hero
+                pricing_title: "Einfache, transparente Preise",
+                pricing_subtitle: "Wählen Sie den perfekten Plan für Ihre Jobsuche in Deutschland. Beginnen Sie mit kostenloser Jobsuche und upgraden Sie jederzeit.",
+                
+                // CV Correction Banner
+                cv_banner_title: "🎯 Professionelle Lebenslauf-Korrektur",
+                cv_banner_once: "Einmalzahlung",
+                cv_banner_description: "Lassen Sie Ihren Lebenslauf professionell nach deutschen Standards korrigieren. Einmal bezahlen, für immer nutzen mit unbegrenzten Updates und Überarbeitungen.",
+                cv_feature_1: "Deutsche Formatstandards",
+                cv_feature_2: "Professionelle Übersetzung",
+                cv_feature_3: "Unbegrenzte Updates",
+                cv_feature_4: "ATS-Optimierung",
+                cv_button: "Jetzt Lebenslauf korrigieren lassen",
+                
+                // Plans
+                plan_basic_name: "Pay As You Go",
+                plan_basic_description: "Perfekt für gelegentliche Bewerbungen",
+                plan_basic_per: "/Anschreiben",
+                plan_basic_billing: "Zahlen Sie nur, wenn Sie es brauchen",
+                feature_basic_1: "1 professionelles Anschreiben",
+                feature_basic_2: "Kostenlose Jobsuche & Matching",
+                feature_basic_3: "KI-gestützte Anpassung",
+                feature_basic_4: "Deutsche Formatstandards",
+                feature_basic_5: "24-Stunden-Lieferung",
+                plan_button_basic: "Jetzt starten",
+                
+                plan_standard_name: "Standard-Paket",
+                plan_standard_description: "Bestes Preis-Leistungs-Verhältnis für aktive Jobsuchende",
+                plan_standard_per: "/30 Anschreiben",
+                plan_standard_billing: "€0,67 pro Anschreiben - Sparen Sie 83%!",
+                popular_badge: "BELIEBTESTE WAHL",
+                feature_standard_1: "30 professionelle Anschreiben",
+                feature_standard_2: "Kostenlose Jobsuche & Matching",
+                feature_standard_3: "Prioritätsbearbeitung",
+                feature_standard_4: "Bewerbungsverfolgung",
+                feature_standard_5: "E-Mail-Support",
+                feature_standard_6: "90 Tage gültig",
+                plan_button_standard: "Standard wählen",
+                
+                plan_premium_name: "Unbegrenzt",
+                plan_premium_description: "Für ernsthafte Jobsuchende",
+                plan_premium_per: "/Monat",
+                plan_premium_billing: "Unbegrenzte Anschreiben",
+                feature_premium_1: "Unbegrenzte Anschreiben",
+                feature_premium_2: "Kostenlose Jobsuche & Matching",
+                feature_premium_3: "Sofortige Generierung",
+                feature_premium_4: "Erweiterte Anpassung",
+                feature_premium_5: "Prioritätssupport 24/7",
+                feature_premium_6: "Tipps zur Interviewvorbereitung",
+                feature_premium_7: "Jederzeit kündbar",
+                plan_button_premium: "Unbegrenzt nutzen",
+                
+                // FAQ
+                faq_title: "Häufig gestellte Fragen",
+                faq_q1: "Ist die Jobsuche wirklich kostenlos?",
+                faq_a1: "Ja! Jobsuche und Matching sind für immer 100% kostenlos. Sie zahlen nur für die Generierung von Anschreiben und Lebenslauf-Korrekturdienste.",
+                faq_q2: "Wie funktioniert die Lebenslauf-Korrektur?",
+                faq_a2: "Unsere Lebenslauf-Korrektur ist ein einmaliger Service. Wir formatieren Ihren Lebenslauf professionell nach deutschen Standards, korrigieren Sprachfehler und optimieren ihn für ATS-Systeme. Einmal korrigiert, können Sie ihn unbegrenzt oft aktualisieren und verwenden.",
+                faq_q3: "Kann ich den Plan wechseln?",
+                faq_a3: "Absolut! Sie können Ihren Plan jederzeit upgraden oder downgraden. Wenn Sie noch Anschreiben aus einem Standard-Paket haben, bleiben diese beim Wechsel gültig.",
+                faq_q4: "Welche Sprachen unterstützen Sie?",
+                faq_a4: "Wir unterstützen über 50 Sprachen. Sie können Ihren Lebenslauf und Ihre Anschreiben in jeder Sprache schreiben, und wir übersetzen und formatieren sie nach professionellen deutschen Standards.",
+                faq_q5: "Verfallen ungenutzte Anschreiben?",
+                faq_a5: "Für das Standard-Paket (30 Anschreiben) sind Ihre Credits 90 Tage gültig. Unbegrenzte Monatspläne erneuern sich jeden Monat. Pay-as-you-go-Anschreiben verfallen nie.",
+                
+                // Chat
+                chat_button: "Haben Sie eine Frage?",
+                
+                // Footer
+                footer_privacy: "Datenschutz",
+                footer_terms: "Nutzungsbedingungen",
+                footer_contact: "Support kontaktieren",
+                footer_help: "Hilfe-Center",
+                footer_copyright: "© 2025 Applit — Alle Rechte vorbehalten. Wir helfen internationalen Fachkräften, 15x schneller in Deutschland eingestellt zu werden."
+            },
+            pt: {
+                // Navigation
+                nav_home: "Início",
+                nav_pricing: "Preços",
+                nav_how_it_works: "Como funciona",
+                nav_support: "Suporte",
+                nav_start_trial: "Iniciar Teste Grátis",
+                
+                // Pricing Hero
+                pricing_title: "Preços Simples e Transparentes",
+                pricing_subtitle: "Escolha o plano perfeito para sua jornada de busca de emprego na Alemanha. Comece com busca de emprego gratuita e faça upgrade a qualquer momento.",
+                
+                // CV Correction Banner
+                cv_banner_title: "🎯 Correção Profissional de CV",
+                cv_banner_once: "pagamento único",
+                cv_banner_description: "Tenha seu CV corrigido profissionalmente aos padrões alemães. Pague uma vez, use para sempre com atualizações e revisões ilimitadas.",
+                cv_feature_1: "Padrões de formato alemão",
+                cv_feature_2: "Tradução profissional",
+                cv_feature_3: "Atualizações ilimitadas",
+                cv_feature_4: "Otimização ATS",
+                cv_button: "Corrija Seu CV Agora",
+                
+                // Plans
+                plan_basic_name: "Pague Conforme Usa",
+                plan_basic_description: "Perfeito para candidaturas ocasionais",
+                plan_basic_per: "/carta de apresentação",
+                plan_basic_billing: "Pague apenas quando precisar",
+                feature_basic_1: "1 carta de apresentação profissional",
+                feature_basic_2: "Busca de emprego e matching grátis",
+                feature_basic_3: "Personalização com IA",
+                feature_basic_4: "Padrões de formato alemão",
+                feature_basic_5: "Entrega em 24 horas",
+                plan_button_basic: "Começar",
+                
+                plan_standard_name: "Pacote Padrão",
+                plan_standard_description: "Melhor valor para candidatos ativos",
+                plan_standard_per: "/30 cartas",
+                plan_standard_billing: "€0,67 por carta - Economize 83%!",
+                popular_badge: "MAIS POPULAR",
+                feature_standard_1: "30 cartas de apresentação profissionais",
+                feature_standard_2: "Busca de emprego e matching grátis",
+                feature_standard_3: "Processamento prioritário",
+                feature_standard_4: "Rastreamento de aplicações",
+                feature_standard_5: "Suporte por email",
+                feature_standard_6: "Válido por 90 dias",
+                plan_button_standard: "Escolher Padrão",
+                
+                plan_premium_name: "Ilimitado",
+                plan_premium_description: "Para candidatos sérios",
+                plan_premium_per: "/mês",
+                plan_premium_billing: "Cartas de apresentação ilimitadas",
+                feature_premium_1: "Cartas de apresentação ilimitadas",
+                feature_premium_2: "Busca de emprego e matching grátis",
+                feature_premium_3: "Geração instantânea",
+                feature_premium_4: "Personalização avançada",
+                feature_premium_5: "Suporte prioritário 24/7",
+                feature_premium_6: "Dicas de preparação para entrevista",
+                feature_premium_7: "Cancele a qualquer momento",
+                plan_button_premium: "Seja Ilimitado",
+                
+                // FAQ
+                faq_title: "Perguntas Frequentes",
+                faq_q1: "A busca de emprego é realmente gratuita?",
+                faq_a1: "Sim! A busca de emprego e matching são 100% gratuitos para sempre. Você paga apenas pela geração de cartas de apresentação e serviços de correção de CV.",
+                faq_q2: "Como funciona a correção de CV?",
+                faq_a2: "Nossa correção de CV é um serviço único. Formatamos profissionalmente seu CV aos padrões alemães, corrigimos erros de idioma e otimizamos para sistemas ATS. Uma vez corrigido, você pode atualizar e usar ilimitadamente.",
+                faq_q3: "Posso mudar de plano?",
+                faq_a3: "Absolutamente! Você pode fazer upgrade ou downgrade do seu plano a qualquer momento. Se você tiver cartas de apresentação restantes de um pacote Padrão, elas permanecerão válidas quando você mudar.",
+                faq_q4: "Quais idiomas vocês suportam?",
+                faq_a4: "Suportamos mais de 50 idiomas. Você pode escrever seu CV e cartas de apresentação em qualquer idioma, e nós traduziremos e formataremos aos padrões profissionais alemães.",
+                faq_q5: "As cartas de apresentação não usadas expiram?",
+                faq_a5: "Para o pacote Padrão (30 cartas), seus créditos são válidos por 90 dias. Planos mensais ilimitados renovam a cada mês. Cartas pagas conforme o uso nunca expiram.",
+                
+                // Chat
+                chat_button: "Tem uma pergunta?",
+                
+                // Footer
+                footer_privacy: "Política de Privacidade",
+                footer_terms: "Termos de Serviço",
+                footer_contact: "Contatar Suporte",
+                footer_help: "Central de Ajuda",
+                footer_copyright: "© 2025 Applit — Todos os direitos reservados. Ajudando profissionais internacionais a serem contratados 15x mais rápido na Alemanha."
+            },
+            ar: {
+                // Navigation
+                nav_home: "الرئيسية",
+                nav_pricing: "الأسعار",
+                nav_how_it_works: "كيف يعمل",
+                nav_support: "الدعم",
+                nav_start_trial: "ابدأ النسخة التجريبية",
+                
+                // Pricing Hero
+                pricing_title: "أسعار بسيطة وشفافة",
+                pricing_subtitle: "اختر الخطة المثالية لرحلة البحث عن عمل في ألمانيا. ابدأ بالبحث المجاني عن وظيفة وقم بالترقية في أي وقت.",
+                
+                // CV Correction Banner
+                cv_banner_title: "🎯 تصحيح السيرة الذاتية المهنية",
+                cv_banner_once: "دفعة واحدة",
+                cv_banner_description: "احصل على تصحيح احترافي لسيرتك الذاتية وفقاً للمعايير الألمانية. ادفع مرة واحدة، استخدم إلى الأبد مع تحديثات ومراجعات غير محدودة.",
+                cv_feature_1: "معايير التنسيق الألمانية",
+                cv_feature_2: "ترجمة احترافية",
+                cv_feature_3: "تحديثات غير محدودة",
+                cv_feature_4: "تحسين ATS",
+                cv_button: "صحح سيرتك الذاتية الآن",
+                
+                // Plans
+                plan_basic_name: "ادفع حسب الاستخدام",
+                plan_basic_description: "مثالي للتقديمات العرضية",
+                plan_basic_per: "/خطاب تقديم",
+                plan_basic_billing: "ادفع فقط عندما تحتاج",
+                feature_basic_1: "خطاب تقديم احترافي واحد",
+                feature_basic_2: "بحث ومطابقة وظائف مجانية",
+                feature_basic_3: "تخصيص بالذكاء الاصطناعي",
+                feature_basic_4: "معايير التنسيق الألمانية",
+                feature_basic_5: "التسليم خلال 24 ساعة",
+                plan_button_basic: "ابدأ الآن",
+                
+                plan_standard_name: "الحزمة القياسية",
+                plan_standard_description: "أفضل قيمة للباحثين النشطين عن عمل",
+                plan_standard_per: "/30 خطاب",
+                plan_standard_billing: "€0.67 لكل خطاب - وفر 83%!",
+                popular_badge: "الأكثر شعبية",
+                feature_standard_1: "30 خطاب تقديم احترافي",
+                feature_standard_2: "بحث ومطابقة وظائف مجانية",
+                feature_standard_3: "معالجة ذات أولوية",
+                feature_standard_4: "تتبع التطبيقات",
+                feature_standard_5: "دعم بالبريد الإلكتروني",
+                feature_standard_6: "صالح لمدة 90 يوماً",
+                plan_button_standard: "اختر القياسية",
+                
+                plan_premium_name: "غير محدود",
+                plan_premium_description: "للباحثين الجادين عن عمل",
+                plan_premium_per: "/شهر",
+                plan_premium_billing: "خطابات تقديم غير محدودة",
+                feature_premium_1: "خطابات تقديم غير محدودة",
+                feature_premium_2: "بحث ومطابقة وظائف مجانية",
+                feature_premium_3: "إنشاء فوري",
+                feature_premium_4: "تخصيص متقدم",
+                feature_premium_5: "دعم أولوية 24/7",
+                feature_premium_6: "نصائح التحضير للمقابلة",
+                feature_premium_7: "إلغاء في أي وقت",
+                plan_button_premium: "احصل على غير محدود",
+                
+                // FAQ
+                faq_title: "الأسئلة الشائعة",
+                faq_q1: "هل البحث عن وظيفة مجاني حقاً؟",
+                faq_a1: "نعم! البحث عن وظيفة والمطابقة مجانيان 100% إلى الأبد. تدفع فقط مقابل إنشاء خطابات التقديم وخدمات تصحيح السيرة الذاتية.",
+                faq_q2: "كيف يعمل تصحيح السيرة الذاتية؟",
+                faq_a2: "تصحيح السيرة الذاتية لدينا خدمة لمرة واحدة. ننسق سيرتك الذاتية بشكل احترافي وفقاً للمعايير الألمانية، ونصحح الأخطاء اللغوية، ونحسنها لأنظمة ATS. بمجرد التصحيح، يمكنك التحديث والاستخدام بشكل غير محدود.",
+                faq_q3: "هل يمكنني تغيير الخطة؟",
+                faq_a3: "بالتأكيد! يمكنك الترقية أو الخفض لخطتك في أي وقت. إذا كان لديك خطابات تقديم متبقية من حزمة قياسية، ستبقى صالحة عند التبديل.",
+                faq_q4: "ما اللغات التي تدعمونها؟",
+                faq_a4: "ندعم أكثر من 50 لغة. يمكنك كتابة سيرتك الذاتية وخطابات التقديم بأي لغة، وسنترجم وننسق وفقاً للمعايير المهنية الألمانية.",
+                faq_q5: "هل تنتهي صلاحية خطابات التقديم غير المستخدمة؟",
+                faq_a5: "للحزمة القياسية (30 خطاب)، رصيدك صالح لمدة 90 يوماً. الخطط الشهرية غير المحدودة تتجدد كل شهر. خطابات الدفع حسب الاستخدام لا تنتهي صلاحيتها أبداً.",
+                
+                // Chat
+                chat_button: "هل لديك سؤال؟",
+                
+                // Footer
+                footer_privacy: "سياسة الخصوصية",
+                footer_terms: "شروط الخدمة",
+                footer_contact: "اتصل بالدعم",
+                footer_help: "مركز المساعدة",
+                footer_copyright: "© 2025 Applit — جميع الحقوق محفوظة. نساعد المحترفين الدوليين على الحصول على وظيفة أسرع بـ 15 مرة في ألمانيا."
+            },
+            ru: {
+                // Navigation
+                nav_home: "Главная",
+                nav_pricing: "Цены",
+                nav_how_it_works: "Как это работает",
+                nav_support: "Поддержка",
+                nav_start_trial: "Начать бесплатно",
+                
+                // Pricing Hero
+                pricing_title: "Простые, прозрачные цены",
+                pricing_subtitle: "Выберите идеальный план для вашего поиска работы в Германии. Начните с бесплатного поиска работы и обновляйтесь в любое время.",
+                
+                // CV Correction Banner
+                cv_banner_title: "🎯 Профессиональная коррекция резюме",
+                cv_banner_once: "разовый платеж",
+                cv_banner_description: "Получите профессиональную коррекцию вашего резюме по немецким стандартам. Платите один раз, используйте навсегда с неограниченными обновлениями и правками.",
+                cv_feature_1: "Немецкие стандарты формата",
+                cv_feature_2: "Профессиональный перевод",
+                cv_feature_3: "Неограниченные обновления",
+                cv_feature_4: "Оптимизация ATS",
+                cv_button: "Исправить резюме сейчас",
+                
+                // Plans
+                plan_basic_name: "Платите по мере использования",
+                plan_basic_description: "Идеально для случайных заявок",
+                plan_basic_per: "/сопроводительное письмо",
+                plan_basic_billing: "Платите только когда нужно",
+                feature_basic_1: "1 профессиональное сопроводительное письмо",
+                feature_basic_2: "Бесплатный поиск работы и подбор",
+                feature_basic_3: "Настройка с помощью ИИ",
+                feature_basic_4: "Немецкие стандарты формата",
+                feature_basic_5: "Доставка за 24 часа",
+                plan_button_basic: "Начать",
+                
+                plan_standard_name: "Стандартный пакет",
+                plan_standard_description: "Лучшее соотношение цены и качества для активных соискателей",
+                plan_standard_per: "/30 писем",
+                plan_standard_billing: "€0,67 за письмо - Экономия 83%!",
+                popular_badge: "САМЫЙ ПОПУЛЯРНЫЙ",
+                feature_standard_1: "30 профессиональных сопроводительных писем",
+                feature_standard_2: "Бесплатный поиск работы и подбор",
+                feature_standard_3: "Приоритетная обработка",
+                feature_standard_4: "Отслеживание заявок",
+                feature_standard_5: "Поддержка по email",
+                feature_standard_6: "Действует 90 дней",
+                plan_button_standard: "Выбрать Стандарт",
+                
+                plan_premium_name: "Безлимитный",
+                plan_premium_description: "Для серьезных соискателей",
+                plan_premium_per: "/месяц",
+                plan_premium_billing: "Неограниченные сопроводительные письма",
+                feature_premium_1: "Неограниченные сопроводительные письма",
+                feature_premium_2: "Бесплатный поиск работы и подбор",
+                feature_premium_3: "Мгновенная генерация",
+                feature_premium_4: "Расширенная настройка",
+                feature_premium_5: "Приоритетная поддержка 24/7",
+                feature_premium_6: "Советы по подготовке к интервью",
+                feature_premium_7: "Отмена в любое время",
+                plan_button_premium: "Стать Безлимитным",
+                
+                // FAQ
+                faq_title: "Часто задаваемые вопросы",
+                faq_q1: "Поиск работы действительно бесплатный?",
+                faq_a1: "Да! Поиск работы и подбор на 100% бесплатны навсегда. Вы платите только за генерацию сопроводительных писем и услуги коррекции резюме.",
+                faq_q2: "Как работает коррекция резюме?",
+                faq_a2: "Наша коррекция резюме - это разовая услуга. Мы профессионально форматируем ваше резюме по немецким стандартам, исправляем языковые ошибки и оптимизируем для систем ATS. После коррекции вы можете обновлять и использовать его неограниченно.",
+                faq_q3: "Могу ли я сменить план?",
+                faq_a3: "Абсолютно! Вы можете повысить или понизить свой план в любое время. Если у вас остались сопроводительные письма из Стандартного пакета, они останутся действительными при переключении.",
+                faq_q4: "Какие языки вы поддерживаете?",
+                faq_a4: "Мы поддерживаем более 50 языков. Вы можете писать резюме и сопроводительные письма на любом языке, и мы переведем и отформатируем их по профессиональным немецким стандартам.",
+                faq_q5: "Истекает ли срок неиспользованных сопроводительных писем?",
+                faq_a5: "Для Стандартного пакета (30 писем) ваши кредиты действительны 90 дней. Безлимитные месячные планы обновляются каждый месяц. Письма с оплатой по мере использования никогда не истекают.",
+                
+                // Chat
+                chat_button: "Есть вопрос?",
+                
+                // Footer
+                footer_privacy: "Политика конфиденциальности",
+                footer_terms: "Условия использования",
+                footer_contact: "Связаться с поддержкой",
+                footer_help: "Центр помощи",
+                footer_copyright: "© 2025 Applit — Все права защищены. Помогаем международным специалистам найти работу в 15 раз быстрее в Германии."
+            },
+            es: {
+                // Navigation
+                nav_home: "Inicio",
+                nav_pricing: "Precios",
+                nav_how_it_works: "Cómo funciona",
+                nav_support: "Soporte",
+                nav_start_trial: "Prueba gratuita",
+                
+                // Pricing Hero
+                pricing_title: "Precios simples y transparentes",
+                pricing_subtitle: "Elige el plan perfecto para tu búsqueda de empleo en Alemania. Comienza con búsqueda gratuita de empleo y actualiza en cualquier momento.",
+                
+                // CV Correction Banner
+                cv_banner_title: "🎯 Corrección profesional de CV",
+                cv_banner_once: "pago único",
+                cv_banner_description: "Obtén tu CV corregido profesionalmente según los estándares alemanes. Paga una vez, úsalo para siempre con actualizaciones y revisiones ilimitadas.",
+                cv_feature_1: "Estándares de formato alemán",
+                cv_feature_2: "Traducción profesional",
+                cv_feature_3: "Actualizaciones ilimitadas",
+                cv_feature_4: "Optimización ATS",
+                cv_button: "Corrige tu CV ahora",
+                
+                // Plans
+                plan_basic_name: "Paga por uso",
+                plan_basic_description: "Perfecto para aplicaciones ocasionales",
+                plan_basic_per: "/carta de presentación",
+                plan_basic_billing: "Paga solo cuando lo necesites",
+                feature_basic_1: "1 carta de presentación profesional",
+                feature_basic_2: "Búsqueda y emparejamiento de trabajo gratis",
+                feature_basic_3: "Personalización con IA",
+                feature_basic_4: "Estándares de formato alemán",
+                feature_basic_5: "Entrega en 24 horas",
+                plan_button_basic: "Empezar",
+                
+                plan_standard_name: "Paquete Estándar",
+                plan_standard_description: "Mejor valor para buscadores activos de empleo",
+                plan_standard_per: "/30 cartas",
+                plan_standard_billing: "€0,67 por carta - ¡Ahorra 83%!",
+                popular_badge: "MÁS POPULAR",
+                feature_standard_1: "30 cartas de presentación profesionales",
+                feature_standard_2: "Búsqueda y emparejamiento de trabajo gratis",
+                feature_standard_3: "Procesamiento prioritario",
+                feature_standard_4: "Seguimiento de aplicaciones",
+                feature_standard_5: "Soporte por email",
+                feature_standard_6: "Válido por 90 días",
+                plan_button_standard: "Elegir Estándar",
+                
+                plan_premium_name: "Ilimitado",
+                plan_premium_description: "Para cazadores de empleo serios",
+                plan_premium_per: "/mes",
+                plan_premium_billing: "Cartas de presentación ilimitadas",
+                feature_premium_1: "Cartas de presentación ilimitadas",
+                feature_premium_2: "Búsqueda y emparejamiento de trabajo gratis",
+                feature_premium_3: "Generación instantánea",
+                feature_premium_4: "Personalización avanzada",
+                feature_premium_5: "Soporte prioritario 24/7",
+                feature_premium_6: "Consejos de preparación para entrevistas",
+                feature_premium_7: "Cancela en cualquier momento",
+                plan_button_premium: "Ser Ilimitado",
+                
+                // FAQ
+                faq_title: "Preguntas frecuentes",
+                faq_q1: "¿La búsqueda de empleo es realmente gratuita?",
+                faq_a1: "¡Sí! La búsqueda de empleo y el emparejamiento son 100% gratuitos para siempre. Solo pagas por la generación de cartas de presentación y servicios de corrección de CV.",
+                faq_q2: "¿Cómo funciona la corrección de CV?",
+                faq_a2: "Nuestra corrección de CV es un servicio único. Formateamos profesionalmente tu CV según los estándares alemanes, corregimos errores de idioma y optimizamos para sistemas ATS. Una vez corregido, puedes actualizar y usar ilimitadamente.",
+                faq_q3: "¿Puedo cambiar de plan?",
+                faq_a3: "¡Absolutamente! Puedes actualizar o reducir tu plan en cualquier momento. Si tienes cartas de presentación restantes de un paquete Estándar, seguirán siendo válidas cuando cambies.",
+                faq_q4: "¿Qué idiomas soportan?",
+                faq_a4: "Soportamos más de 50 idiomas. Puedes escribir tu CV y cartas de presentación en cualquier idioma, y las traduciremos y formatearemos según los estándares profesionales alemanes.",
+                faq_q5: "¿Las cartas de presentación no utilizadas expiran?",
+                faq_a5: "Para el paquete Estándar (30 cartas), tus créditos son válidos por 90 días. Los planes mensuales ilimitados se renuevan cada mes. Las cartas de pago por uso nunca expiran.",
+                
+                // Chat
+                chat_button: "¿Tienes una pregunta?",
+                
+                // Footer
+                footer_privacy: "Política de privacidad",
+                footer_terms: "Términos de servicio",
+                footer_contact: "Contactar soporte",
+                footer_help: "Centro de ayuda",
+                footer_copyright: "© 2025 Applit — Todos los derechos reservados. Ayudando a profesionales internacionales a ser contratados 15 veces más rápido en Alemania."
+            }
+        };
+
+        // Get the saved language from localStorage or default to English
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+        // Initialize the page with the saved language
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            const savedFlag = localStorage.getItem('selectedFlag') || '🇺🇸';
+            const savedLangName = localStorage.getItem('selectedLangName') || 'English';
+            
+            selectLanguage(savedLang, savedFlag, savedLangName, false);
+        });
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.language-selector')) {
+                document.getElementById('language-dropdown').classList.remove('active');
+            }
+        });
+
+        function selectLanguage(langCode, flag, langName, save = true) {
+            currentLanguage = langCode;
+            
+            // Update current language display
+            document.getElementById('current-flag').textContent = flag;
+            document.getElementById('current-lang').textContent = langName;
+            
+            // Update selected state in dropdown
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Find and select the correct option
+            document.querySelectorAll('.language-option').forEach(option => {
+                if (option.textContent.includes(flag)) {
+                    option.classList.add('selected');
+                }
+            });
+            
+            // Close dropdown
+            document.getElementById('language-dropdown').classList.remove('active');
+            
+            // Update page language
+            updatePageLanguage(langCode);
+            
+            // Set RTL for Arabic
+            if (langCode === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', langCode);
+            }
+            
+            // Save to localStorage
+            if (save) {
+                localStorage.setItem('selectedLanguage', langCode);
+                localStorage.setItem('selectedFlag', flag);
+                localStorage.setItem('selectedLangName', langName);
+            }
+        }
+
+        function updatePageLanguage(langCode) {
+            const trans = translations[langCode];
+            
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (trans[key]) {
+                    element.innerHTML = trans[key];
+                }
+            });
+            
+            // Update placeholders
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (trans[key]) {
+                    element.placeholder = trans[key];
+                }
+            });
+            
+            // Update page title
+            document.title = langCode === 'de' ? 'Preise - Applit | 15x Schneller zum Job in Deutschland' : 
+                            langCode === 'pt' ? 'Preços - Applit | Seja Contratado 15x Mais Rápido na Alemanha' :
+                            langCode === 'ar' ? 'الأسعار - Applit | احصل على وظيفة أسرع بـ 15 مرة في ألمانيا' :
+                            langCode === 'ru' ? 'Цены - Applit | Найдите работу в 15 раз быстрее в Германии' :
+                            langCode === 'es' ? 'Precios - Applit | Consigue trabajo 15x más rápido en Alemania' :
+                            'Pricing - Applit | Get Hired 15x Faster in Germany';
+        }
+
+        // Toggle FAQ items
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize pricing card animations
+        document.querySelectorAll('.pricing-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
